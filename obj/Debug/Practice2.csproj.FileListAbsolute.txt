@@ -1,0 +1,107 @@
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\bin\Debug\Practice2.exe.config
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\bin\Debug\Practice2.exe
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\bin\Debug\Practice2.pdb
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\bin\Debug\EntityFramework.dll
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\bin\Debug\MaterialDesignColors.dll
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\bin\Debug\EntityFramework.xml
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\Practice2.csproj.AssemblyReference.cache
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\MainWindow.g.cs
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\App.g.cs
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\Practice2_Content.g.cs
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\Practice2_MarkupCompile.cache
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\Practice2_MarkupCompile.lref
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\App.baml
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\MainWindow.baml
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\Practice2.g.resources
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\Practice2.Properties.Resources.resources
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\Practice2.csproj.GenerateResource.cache
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\Practice2.csproj.CoreCompileInputs.cache
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\Practice2.csproj.CopyComplete
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\Practice2.exe
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\Practice2.pdb
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\MainWindow(DS).g.cs
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages DS\AlbumPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages DS\AlbumsPodcastsPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages DS\AuthorPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages DS\EpisodePage.g.cs
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages DS\PodcastPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages_EF\AlbumsPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages_EF\AuthorPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages_EF\EpisodePage.g.cs
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages_EF\PodcastsAlbumsPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages_EF\PodcastsPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\MainWindow(DS).baml
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages DS\AlbumPage.baml
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages DS\AlbumsPodcastsPage.baml
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages DS\AuthorPage.baml
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages DS\EpisodePage.baml
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages DS\PodcastPage.baml
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages_EF\AlbumsPage.baml
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages_EF\AuthorPage.baml
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages_EF\EpisodePage.baml
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages_EF\PodcastsAlbumsPage.baml
+C:\Users\Kombucha\Desktop\УП\practrice2\C#\Practice2\Practice2\obj\Debug\pages_EF\PodcastsPage.baml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\bin\Debug\Practice2.exe.config
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\bin\Debug\Practice2.exe
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\bin\Debug\Practice2.pdb
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\bin\Debug\EntityFramework.dll
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\bin\Debug\MaterialDesignColors.dll
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\bin\Debug\Microsoft.Xaml.Behaviors.dll
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\bin\Debug\EntityFramework.xml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\bin\Debug\Microsoft.Xaml.Behaviors.xml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\Practice2.csproj.AssemblyReference.cache
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\MainWindow(DS).g.cs
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\MainWindow.g.cs
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages DS\AlbumPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages DS\AlbumsPodcastsPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages DS\AuthorPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages DS\EpisodePage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages DS\PodcastPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages_EF\AlbumsPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages_EF\AuthorPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages_EF\EpisodePage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages_EF\PodcastsAlbumsPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages_EF\PodcastsPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\App.g.cs
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\Practice2_Content.g.cs
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\Practice2_MarkupCompile.cache
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\Practice2_MarkupCompile.lref
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\App.baml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\MainWindow(DS).baml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\MainWindow.baml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages DS\AlbumPage.baml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages DS\AlbumsPodcastsPage.baml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages DS\AuthorPage.baml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages DS\EpisodePage.baml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages DS\PodcastPage.baml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages_EF\AlbumsPage.baml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages_EF\AuthorPage.baml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages_EF\EpisodePage.baml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages_EF\PodcastsAlbumsPage.baml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\pages_EF\PodcastsPage.baml
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\Practice2.g.resources
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\Practice2.Properties.Resources.resources
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\Practice2.csproj.GenerateResource.cache
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\Practice2.csproj.CoreCompileInputs.cache
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\Practice2.csproj.CopyComplete
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\Practice2.exe
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\Practice2.pdb
+C:\Users\Kombucha\Desktop\УП\practice2\C#\Practice2\Practice2\obj\Debug\ComboBoxDataTemplate.baml

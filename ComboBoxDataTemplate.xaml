@@ -1,0 +1,33 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <DataTemplate x:Key="PodcastComboBoxDataTemplate">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding Podcast_Name}" FontSize="14" FontFamily="Sans" TextAlignment="Center"/>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="AlbumComboBoxDataTemplate">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding Album_Name}" FontSize="14" FontFamily="Sans" TextAlignment="Center"/>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="AuthorComboBoxDataTemplate">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="{Binding Author_Name}" FontSize="14" FontFamily="Sans" TextAlignment="Center"/>
+            <TextBlock  Grid.Column="1" Text="{Binding Author_SurName}" FontSize="14" FontFamily="Sans" TextAlignment="Center"/>
+            <TextBlock Grid.Column="2" Text="{Binding Author_Nickname}" FontSize="14" FontFamily="Sans" TextAlignment="Center"/>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>
