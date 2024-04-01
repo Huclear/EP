@@ -1,0 +1,19 @@
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\Practice4.csproj.AssemblyReference.cache
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\ComboBoxDataTemplate.baml
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\MainWindow(DS).g.cs
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\MainWindow.g.cs
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\pages DS\AlbumPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\pages DS\AlbumsPodcastsPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\pages DS\AuthorPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\pages DS\EpisodePage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\pages DS\PodcastPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\pages_EF\AlbumsPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\pages_EF\AuthorPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\pages_EF\EpisodePage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\pages_EF\PodcastsAlbumsPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\pages_EF\PodcastsPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\App.g.cs
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\Practice4_Content.g.cs
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\Practice4_MarkupCompile.cache
+C:\Users\Kombucha\Desktop\УП\practice4\Practice2\Practice2\obj\Debug\Practice4_MarkupCompile.lref

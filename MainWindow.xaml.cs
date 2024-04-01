@@ -1,4 +1,4 @@
-﻿using Practice2.pages;
+﻿using Practice4.pages;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -15,14 +15,13 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Practice2
+namespace Practice4
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
     {
-        private PodcastsVM podcastsVM;
 
         private PodcastsAlbumsPage podcastsAlbumsPage;
         private EpisodePage episodePage;
@@ -32,12 +31,11 @@ namespace Practice2
 
         public MainWindow()
         {
-            podcastsVM = new PodcastsVM();
-            podcastsAlbumsPage = new PodcastsAlbumsPage(podcastsVM);
-            episodePage = new EpisodePage(podcastsVM);
-            podcastsPage = new PodcastsPage(podcastsVM);
-            authorPage = new AuthorPage(podcastsVM);
-            albumPage = new AlbumPage(podcastsVM);
+            podcastsAlbumsPage = new PodcastsAlbumsPage();
+            episodePage = new EpisodePage();
+            podcastsPage = new PodcastsPage();
+            authorPage = new AuthorPage();
+            albumPage = new AlbumPage();
             InitializeComponent();
             PageSelection.ItemsSource = new object[]
             {

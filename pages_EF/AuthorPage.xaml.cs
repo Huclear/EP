@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Practice4.ViewModels.EF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,29 +14,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Practice2.pages
+namespace Practice4.pages
 {
     /// <summary>
     /// Interaction logic for AuthorPage.xaml
     /// </summary>
     public partial class AuthorPage : Page
     {
-        public PodcastsVM podcastsVM { get; set; }
+        public AuthorPageVM authorsVM { get; set; }
 
-        public AuthorPage(PodcastsVM _podcastsVM)
+        public AuthorPage()
         {
-            podcastsVM = _podcastsVM;
+            authorsVM = new AuthorPageVM();
             InitializeComponent();
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            podcastsVM.AddAuthor();
-        }
-
-        private void OnSaveChanges_Click(object sender, RoutedEventArgs e)
-        {
-            podcastsVM.SaveChanges();
         }
     }
 }

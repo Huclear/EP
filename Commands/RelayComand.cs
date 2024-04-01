@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Practice2.Commands
+namespace Practice4.Commands
 {
     public class RelayCommand : ModifyCommandBase
     {

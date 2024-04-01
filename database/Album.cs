@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Practice2.database
+namespace Practice4.database
 {
     using System;
     using System.Collections.Generic;
@@ -28,10 +28,5 @@ namespace Practice2.database
         public virtual Author Author { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<AlbumsPodcasts> AlbumsPodcasts { get; set; }
-
-        public override string ToString()
-        {
-            return Album_Name;
-        }
     }
 }

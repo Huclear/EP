@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Practice2.pages
+namespace Practice4.pages
 {
     /// <summary>
     /// Interaction logic for PodcastsPage.xaml

@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PodcastDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Album">
+    <Key>
+      <PropertyRef Name="ID_Album" />
+    </Key>
+    <Property Name="ID_Album" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Album_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Album_Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Author_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Author" Relationship="Self.FK__Album__Author_ID__6477ECF3" FromRole="Album" ToRole="Author" />
+    <NavigationProperty Name="AlbumsPodcasts" Relationship="Self.FK__AlbumsPod__Album__6754599E" FromRole="Album" ToRole="AlbumsPodcasts" />
+  </EntityType>
+  <EntityType Name="AlbumsPodcasts">
+    <Key>
+      <PropertyRef Name="ID_AlbumsPodcasts" />
+    </Key>
+    <Property Name="ID_AlbumsPodcasts" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Album_ID" Type="Int32" Nullable="false" />
+    <Property Name="Podcast_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Album" Relationship="Self.FK__AlbumsPod__Album__6754599E" FromRole="AlbumsPodcasts" ToRole="Album" />
+    <NavigationProperty Name="Podcast" Relationship="Self.FK__AlbumsPod__Podca__68487DD7" FromRole="AlbumsPodcasts" ToRole="Podcast" />
+  </EntityType>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="ID_Author" />
+    </Key>
+    <Property Name="ID_Author" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Author_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Author_SurName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Author_Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Author_Nickname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Author_Age" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Album" Relationship="Self.FK__Album__Author_ID__6477ECF3" FromRole="Author" ToRole="Album" />
+    <NavigationProperty Name="Podcast" Relationship="Self.FK__Podcast__Author___5AEE82B9" FromRole="Author" ToRole="Podcast" />
+  </EntityType>
+  <EntityType Name="Episode">
+    <Key>
+      <PropertyRef Name="ID_Episode" />
+    </Key>
+    <Property Name="ID_Episode" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Episode_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Episode_Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Episode_Duration" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Podcast_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Podcast" Relationship="Self.FK__Episode__Podcast__5FB337D6" FromRole="Episode" ToRole="Podcast" />
+  </EntityType>
+  <EntityType Name="Podcast">
+    <Key>
+      <PropertyRef Name="ID_Podcast" />
+    </Key>
+    <Property Name="ID_Podcast" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Podcast_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Podcast_Description" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Author_ID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AlbumsPodcasts" Relationship="Self.FK__AlbumsPod__Podca__68487DD7" FromRole="Podcast" ToRole="AlbumsPodcasts" />
+    <NavigationProperty Name="Author" Relationship="Self.FK__Podcast__Author___5AEE82B9" FromRole="Podcast" ToRole="Author" />
+    <NavigationProperty Name="Episode" Relationship="Self.FK__Episode__Podcast__5FB337D6" FromRole="Podcast" ToRole="Episode" />
+  </EntityType>
+  <Association Name="FK__Album__Author_ID__6477ECF3">
+    <End Role="Author" Type="Self.Author" Multiplicity="1" />
+    <End Role="Album" Type="Self.Album" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="ID_Author" />
+      </Principal>
+      <Dependent Role="Album">
+        <PropertyRef Name="Author_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AlbumsPod__Album__6754599E">
+    <End Role="Album" Type="Self.Album" Multiplicity="1" />
+    <End Role="AlbumsPodcasts" Type="Self.AlbumsPodcasts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album">
+        <PropertyRef Name="ID_Album" />
+      </Principal>
+      <Dependent Role="AlbumsPodcasts">
+        <PropertyRef Name="Album_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AlbumsPod__Podca__68487DD7">
+    <End Role="Podcast" Type="Self.Podcast" Multiplicity="1" />
+    <End Role="AlbumsPodcasts" Type="Self.AlbumsPodcasts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Podcast">
+        <PropertyRef Name="ID_Podcast" />
+      </Principal>
+      <Dependent Role="AlbumsPodcasts">
+        <PropertyRef Name="Podcast_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Podcast__Author___5AEE82B9">
+    <End Role="Author" Type="Self.Author" Multiplicity="1" />
+    <End Role="Podcast" Type="Self.Podcast" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="ID_Author" />
+      </Principal>
+      <Dependent Role="Podcast">
+        <PropertyRef Name="Author_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Episode__Podcast__5FB337D6">
+    <End Role="Podcast" Type="Self.Podcast" Multiplicity="1" />
+    <End Role="Episode" Type="Self.Episode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Podcast">
+        <PropertyRef Name="ID_Podcast" />
+      </Principal>
+      <Dependent Role="Episode">
+        <PropertyRef Name="Podcast_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PodcastDBContext" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Album" EntityType="Self.Album" />
+    <EntitySet Name="AlbumsPodcasts" EntityType="Self.AlbumsPodcasts" />
+    <EntitySet Name="Author" EntityType="Self.Author" />
+    <EntitySet Name="Episode" EntityType="Self.Episode" />
+    <EntitySet Name="Podcast" EntityType="Self.Podcast" />
+    <AssociationSet Name="FK__Album__Author_ID__6477ECF3" Association="Self.FK__Album__Author_ID__6477ECF3">
+      <End Role="Author" EntitySet="Author" />
+      <End Role="Album" EntitySet="Album" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AlbumsPod__Album__6754599E" Association="Self.FK__AlbumsPod__Album__6754599E">
+      <End Role="Album" EntitySet="Album" />
+      <End Role="AlbumsPodcasts" EntitySet="AlbumsPodcasts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AlbumsPod__Podca__68487DD7" Association="Self.FK__AlbumsPod__Podca__68487DD7">
+      <End Role="Podcast" EntitySet="Podcast" />
+      <End Role="AlbumsPodcasts" EntitySet="AlbumsPodcasts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Podcast__Author___5AEE82B9" Association="Self.FK__Podcast__Author___5AEE82B9">
+      <End Role="Author" EntitySet="Author" />
+      <End Role="Podcast" EntitySet="Podcast" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Episode__Podcast__5FB337D6" Association="Self.FK__Episode__Podcast__5FB337D6">
+      <End Role="Podcast" EntitySet="Podcast" />
+      <End Role="Episode" EntitySet="Episode" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

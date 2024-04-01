@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Practice2.Commands
+namespace Practice4.Commands
 {
     public class RelayCommand<T> : RelayCommand
     {

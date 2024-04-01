@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Practice2.database
+namespace Practice4.database
 {
     using System;
     using System.Data.Entity;
@@ -16,7 +16,7 @@ namespace Practice2.database
     public partial class PodcastDBContext : DbContext
     {
         public PodcastDBContext()
-            : base("name=PodcastsPlaylistsEntities")
+            : base("name=PodcastDBContext")
         {
         }
     

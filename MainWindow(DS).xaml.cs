@@ -1,4 +1,4 @@
-﻿using Practice2.database.PodcastDBDataSetTableAdapters;
+﻿using Practice4.database.PodcastsPlaylistsDataSetTableAdapters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,9 +12,9 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using Practice2.pages_DS;
-using Practice2.ViewModels;
-namespace Practice2
+using Practice4.pages_DS;
+using Practice4.ViewModels;
+namespace Practice4
 {
     /// <summary>
     /// Interaction logic for MainWindow_DS_.xaml

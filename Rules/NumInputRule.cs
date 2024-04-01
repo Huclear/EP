@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
 
-namespace Practice2.Rules
+namespace Practice4.Rules
 {
     public class NumInputRule : ValidationRule
     {

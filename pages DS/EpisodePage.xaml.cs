@@ -1,5 +1,5 @@
-﻿using Practice2.database;
-using Practice2.ViewModels;
+﻿using Practice4.database;
+using Practice4.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -16,7 +16,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Practice2.pages_DS
+namespace Practice4.pages_DS
 {
     /// <summary>
     /// Interaction logic for EpisodePage.xaml

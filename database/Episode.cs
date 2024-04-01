@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Practice2.database
+namespace Practice4.database
 {
     using System;
     using System.Collections.Generic;
@@ -21,10 +21,5 @@ namespace Practice2.database
         public int Podcast_ID { get; set; }
     
         public virtual Podcast Podcast { get; set; }
-
-        public override string ToString()
-        {
-            return $"{Episode_Name} - {Episode_Duration}";
-        }
     }
 }
