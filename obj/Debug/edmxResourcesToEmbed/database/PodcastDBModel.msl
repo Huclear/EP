@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PodcastsDBNewModelsStoreContainer" CdmEntityContainer="PodcastDBContextNew">
+    <EntitySetMapping Name="Album">
+      <EntityTypeMapping TypeName="PodcastsDBNewModels.Album">
+        <MappingFragment StoreEntitySet="Album">
+          <ScalarProperty Name="ID_Album" ColumnName="ID_Album" />
+          <ScalarProperty Name="Album_Name" ColumnName="Album_Name" />
+          <ScalarProperty Name="Album_Description" ColumnName="Album_Description" />
+          <ScalarProperty Name="Author_ID" ColumnName="Author_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AlbumsPodcasts">
+      <EntityTypeMapping TypeName="PodcastsDBNewModels.AlbumsPodcasts">
+        <MappingFragment StoreEntitySet="AlbumsPodcasts">
+          <ScalarProperty Name="ID_AlbumsPodcasts" ColumnName="ID_AlbumsPodcasts" />
+          <ScalarProperty Name="Album_ID" ColumnName="Album_ID" />
+          <ScalarProperty Name="Podcast_ID" ColumnName="Podcast_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Author">
+      <EntityTypeMapping TypeName="PodcastsDBNewModels.Author">
+        <MappingFragment StoreEntitySet="Author">
+          <ScalarProperty Name="ID_Author" ColumnName="ID_Author" />
+          <ScalarProperty Name="Author_Name" ColumnName="Author_Name" />
+          <ScalarProperty Name="Author_SurName" ColumnName="Author_SurName" />
+          <ScalarProperty Name="Author_Patronymic" ColumnName="Author_Patronymic" />
+          <ScalarProperty Name="Author_Nickname" ColumnName="Author_Nickname" />
+          <ScalarProperty Name="Author_Age" ColumnName="Author_Age" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Episode">
+      <EntityTypeMapping TypeName="PodcastsDBNewModels.Episode">
+        <MappingFragment StoreEntitySet="Episode">
+          <ScalarProperty Name="ID_Episode" ColumnName="ID_Episode" />
+          <ScalarProperty Name="Episode_Name" ColumnName="Episode_Name" />
+          <ScalarProperty Name="Episode_Description" ColumnName="Episode_Description" />
+          <ScalarProperty Name="Episode_Duration" ColumnName="Episode_Duration" />
+          <ScalarProperty Name="Podcast_ID" ColumnName="Podcast_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Podcast">
+      <EntityTypeMapping TypeName="PodcastsDBNewModels.Podcast">
+        <MappingFragment StoreEntitySet="Podcast">
+          <ScalarProperty Name="ID_Podcast" ColumnName="ID_Podcast" />
+          <ScalarProperty Name="Podcast_Name" ColumnName="Podcast_Name" />
+          <ScalarProperty Name="Podcast_Description" ColumnName="Podcast_Description" />
+          <ScalarProperty Name="Author_ID" ColumnName="Author_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AllDataView">
+      <EntityTypeMapping TypeName="PodcastsDBNewModels.AllDataView">
+        <MappingFragment StoreEntitySet="AllDataView">
+          <ScalarProperty Name="Album_description" ColumnName="Album description" />
+          <ScalarProperty Name="Album_name" ColumnName="Album name" />
+          <ScalarProperty Name="Duration__milliSeconds_" ColumnName="Duration (milliSeconds)" />
+          <ScalarProperty Name="Episode_Description" ColumnName="Episode Description" />
+          <ScalarProperty Name="Episode_name" ColumnName="Episode name" />
+          <ScalarProperty Name="Podcast_Description" ColumnName="Podcast Description" />
+          <ScalarProperty Name="Podcast_name" ColumnName="Podcast name" />
+          <ScalarProperty Name="Author_Age" ColumnName="Author Age" />
+          <ScalarProperty Name="Author_nickname" ColumnName="Author nickname" />
+          <ScalarProperty Name="Author_patronymic" ColumnName="Author patronymic" />
+          <ScalarProperty Name="Author_Surname" ColumnName="Author Surname" />
+          <ScalarProperty Name="Author_name" ColumnName="Author name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

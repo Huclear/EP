@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PodcastsDBNewModels.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Album">
+    <Key>
+      <PropertyRef Name="ID_Album" />
+    </Key>
+    <Property Name="ID_Album" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Album_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Album_Description" Type="varchar" MaxLength="300" />
+    <Property Name="Author_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AlbumsPodcasts">
+    <Key>
+      <PropertyRef Name="ID_AlbumsPodcasts" />
+    </Key>
+    <Property Name="ID_AlbumsPodcasts" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Album_ID" Type="int" Nullable="false" />
+    <Property Name="Podcast_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="ID_Author" />
+    </Key>
+    <Property Name="ID_Author" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Author_Name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Author_SurName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Author_Patronymic" Type="varchar" MaxLength="50" />
+    <Property Name="Author_Nickname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Author_Age" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Episode">
+    <Key>
+      <PropertyRef Name="ID_Episode" />
+    </Key>
+    <Property Name="ID_Episode" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Episode_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Episode_Description" Type="varchar" MaxLength="300" />
+    <Property Name="Episode_Duration" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Podcast_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Podcast">
+    <Key>
+      <PropertyRef Name="ID_Podcast" />
+    </Key>
+    <Property Name="ID_Podcast" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Podcast_Name" Type="varchar" MaxLength="50" />
+    <Property Name="Podcast_Description" Type="varchar" MaxLength="300" />
+    <Property Name="Author_ID" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'PodcastsPlaylistsNew.dbo.AllDataView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="AllDataView">
+    <Key>
+      <PropertyRef Name="Author name" />
+      <PropertyRef Name="Author Surname" />
+      <PropertyRef Name="Author nickname" />
+      <PropertyRef Name="Author Age" />
+      <PropertyRef Name="Duration (milliSeconds)" />
+    </Key>
+    <Property Name="Author name" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Author Surname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Author patronymic" Type="varchar" MaxLength="50" />
+    <Property Name="Author nickname" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Author Age" Type="int" Nullable="false" />
+    <Property Name="Podcast name" Type="varchar" MaxLength="50" />
+    <Property Name="Podcast Description" Type="varchar" MaxLength="300" />
+    <Property Name="Episode name" Type="varchar" MaxLength="50" />
+    <Property Name="Episode Description" Type="varchar" MaxLength="300" />
+    <Property Name="Duration (milliSeconds)" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="Album name" Type="varchar" MaxLength="50" />
+    <Property Name="Album description" Type="varchar" MaxLength="300" />
+  </EntityType>
+  <Association Name="FK__Album__Author_ID__6477ECF3">
+    <End Role="Author" Type="Self.Author" Multiplicity="1" />
+    <End Role="Album" Type="Self.Album" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="ID_Author" />
+      </Principal>
+      <Dependent Role="Album">
+        <PropertyRef Name="Author_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AlbumsPod__Album__6754599E">
+    <End Role="Album" Type="Self.Album" Multiplicity="1" />
+    <End Role="AlbumsPodcasts" Type="Self.AlbumsPodcasts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album">
+        <PropertyRef Name="ID_Album" />
+      </Principal>
+      <Dependent Role="AlbumsPodcasts">
+        <PropertyRef Name="Album_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AlbumsPod__Podca__68487DD7">
+    <End Role="Podcast" Type="Self.Podcast" Multiplicity="1" />
+    <End Role="AlbumsPodcasts" Type="Self.AlbumsPodcasts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Podcast">
+        <PropertyRef Name="ID_Podcast" />
+      </Principal>
+      <Dependent Role="AlbumsPodcasts">
+        <PropertyRef Name="Podcast_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Episode__Podcast__5FB337D6">
+    <End Role="Podcast" Type="Self.Podcast" Multiplicity="1" />
+    <End Role="Episode" Type="Self.Episode" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Podcast">
+        <PropertyRef Name="ID_Podcast" />
+      </Principal>
+      <Dependent Role="Episode">
+        <PropertyRef Name="Podcast_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Podcast__Author___5AEE82B9">
+    <End Role="Author" Type="Self.Author" Multiplicity="1" />
+    <End Role="Podcast" Type="Self.Podcast" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="ID_Author" />
+      </Principal>
+      <Dependent Role="Podcast">
+        <PropertyRef Name="Author_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PodcastsDBNewModelsStoreContainer">
+    <EntitySet Name="Album" EntityType="Self.Album" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AlbumsPodcasts" EntityType="Self.AlbumsPodcasts" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Author" EntityType="Self.Author" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Episode" EntityType="Self.Episode" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Podcast" EntityType="Self.Podcast" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AllDataView" EntityType="Self.AllDataView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [AllDataView].[Author name] AS [Author name], 
+    [AllDataView].[Author Surname] AS [Author Surname], 
+    [AllDataView].[Author patronymic] AS [Author patronymic], 
+    [AllDataView].[Author nickname] AS [Author nickname], 
+    [AllDataView].[Author Age] AS [Author Age], 
+    [AllDataView].[Podcast name] AS [Podcast name], 
+    [AllDataView].[Podcast Description] AS [Podcast Description], 
+    [AllDataView].[Episode name] AS [Episode name], 
+    [AllDataView].[Episode Description] AS [Episode Description], 
+    [AllDataView].[Duration (milliSeconds)] AS [Duration (milliSeconds)], 
+    [AllDataView].[Album name] AS [Album name], 
+    [AllDataView].[Album description] AS [Album description]
+    FROM [dbo].[AllDataView] AS [AllDataView]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__Album__Author_ID__6477ECF3" Association="Self.FK__Album__Author_ID__6477ECF3">
+      <End Role="Author" EntitySet="Author" />
+      <End Role="Album" EntitySet="Album" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AlbumsPod__Album__6754599E" Association="Self.FK__AlbumsPod__Album__6754599E">
+      <End Role="Album" EntitySet="Album" />
+      <End Role="AlbumsPodcasts" EntitySet="AlbumsPodcasts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AlbumsPod__Podca__68487DD7" Association="Self.FK__AlbumsPod__Podca__68487DD7">
+      <End Role="Podcast" EntitySet="Podcast" />
+      <End Role="AlbumsPodcasts" EntitySet="AlbumsPodcasts" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Episode__Podcast__5FB337D6" Association="Self.FK__Episode__Podcast__5FB337D6">
+      <End Role="Podcast" EntitySet="Podcast" />
+      <End Role="Episode" EntitySet="Episode" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Podcast__Author___5AEE82B9" Association="Self.FK__Podcast__Author___5AEE82B9">
+      <End Role="Author" EntitySet="Author" />
+      <End Role="Podcast" EntitySet="Podcast" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
