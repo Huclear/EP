@@ -1,4 +1,4 @@
-﻿using Practice3.pages_EF;
+﻿using Practice3.pages;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -22,63 +22,36 @@ namespace Practice3
     /// </summary>
     public partial class MainWindow : Window
     {
-        private PodcastsVM podcastsVM;
-
-        private PodcastsAlbumsPage podcastsAlbumsPage;
-        private EpisodePage episodePage;
-        private PodcastsPage podcastsPage;
-        private AuthorPage authorPage;
-        private AlbumPage albumPage;
+        private Page_EF efPage;
+        private Page_DS dsPage;
 
         public MainWindow()
         {
-            podcastsVM = new PodcastsVM();
-            podcastsAlbumsPage = new PodcastsAlbumsPage(podcastsVM);
-            episodePage = new EpisodePage(podcastsVM);
-            podcastsPage = new PodcastsPage(podcastsVM);
-            authorPage = new AuthorPage(podcastsVM);
-            albumPage = new AlbumPage(podcastsVM);
+            efPage = new Page_EF();
+            dsPage = new Page_DS();
+
             InitializeComponent();
             PageSelection.ItemsSource = new object[]
             {
-                Tables.Author,
-                Tables.Albums_Podcasts,
-                Tables.Album,
-                Tables.Podcast,
-                Tables.Episodes,
+                Realizations.Entities,
+                Realizations.DataSets,
             };
         }
 
         private void onSelectedPageChanged(object sender, SelectionChangedEventArgs e)
         {
-            if (PageSelection.SelectedItem != null && PageSelection.SelectedItem is Tables)
+            if (PageSelection.SelectedItem != null && PageSelection.SelectedItem is Realizations)
             {
                 switch (PageSelection.SelectedItem)
                 {
-                    case Tables.Author:
-                        pages_EF.Content = authorPage;
+                    case Realizations.Entities:
+                        pages_EF.Content = efPage;
                         break;
-                    case Tables.Albums_Podcasts:
-                        pages_EF.Content = podcastsAlbumsPage;
-                        break;
-                    case Tables.Album:
-                        pages_EF.Content = albumPage;
-                        break;
-                    case Tables.Podcast:
-                        pages_EF.Content = podcastsPage;
-                        break;
-                    case Tables.Episodes:
-                        pages_EF.Content = episodePage;
+                    case Realizations.DataSets:
+                        pages_EF.Content = dsPage;
                         break;
                 }
             }
-        }
-
-        private void onGoToDataSets_Click(object sender, RoutedEventArgs e)
-        {
-            MainWindow_DS_ mainWDS = new MainWindow_DS_();
-            mainWDS.Show();
-            Close();
         }
     }
 }

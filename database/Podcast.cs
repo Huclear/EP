@@ -31,10 +31,5 @@ namespace Practice3.database
         public virtual Author Author { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Episode> Episode { get; set; }
-
-        public override string ToString()
-        {
-            return $"{Podcast_Name}: {Podcast_Description ?? "N info about Podcast"}";
-        }
     }
 }

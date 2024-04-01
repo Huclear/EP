@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\
 Practice3
 none
 false
 TRACE
-C:\Users\Kombucha\Desktop\Practice2\Practice2\App.xaml
-12-1126508159
-2537475293
-29-50421320
-21-2144882029
-MainWindow(DS).xaml;MainWindow.xaml;pages DS\AlbumPage.xaml;pages DS\AlbumsPodcastsPage.xaml;pages DS\AuthorPage.xaml;pages DS\EpisodePage.xaml;pages DS\PodcastPage.xaml;pages_EF\AlbumsPage.xaml;pages_EF\AuthorPage.xaml;pages_EF\EpisodePage.xaml;pages_EF\PodcastsAlbumsPage.xaml;pages_EF\PodcastsPage.xaml;
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\App.xaml
+3-1558282649
+2707009901
+19-957195998
+211427807219
+MainWindow.xaml;pages\Page_DS.xaml;pages\Page_EF.xaml;
 
-False
+True
 

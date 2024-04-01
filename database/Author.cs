@@ -32,9 +32,5 @@ namespace Practice3.database
         public virtual ICollection<Album> Album { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Podcast> Podcast { get; set; }
-        public override string ToString()
-        {
-            return $"{Author_SurName} {Author_Name}. ({Author_Nickname})";
-        }
     }
 }

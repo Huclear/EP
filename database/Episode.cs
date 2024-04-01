@@ -21,10 +21,5 @@ namespace Practice3.database
         public int Podcast_ID { get; set; }
     
         public virtual Podcast Podcast { get; set; }
-
-        public override string ToString()
-        {
-            return $"{Episode_Name} ({TimeSpan.FromMilliseconds(Convert.ToDouble(Episode_Duration)).ToString()}) - {Episode_Description}";
-        }
     }
 }

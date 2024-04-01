@@ -76,63 +76,50 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="database\Album.cs">
-      <DependentUpon>PodacstDB.tt</DependentUpon>
+      <DependentUpon>PodcastDB.tt</DependentUpon>
     </Compile>
     <Compile Include="database\AlbumsPodcasts.cs">
-      <DependentUpon>PodacstDB.tt</DependentUpon>
+      <DependentUpon>PodcastDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\AllDataView.cs">
+      <DependentUpon>PodcastDB.tt</DependentUpon>
     </Compile>
     <Compile Include="database\Author.cs">
-      <DependentUpon>PodacstDB.tt</DependentUpon>
+      <DependentUpon>PodcastDB.tt</DependentUpon>
     </Compile>
     <Compile Include="database\Episode.cs">
-      <DependentUpon>PodacstDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="database\PodacstDB.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PodacstDB.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="database\PodacstDB.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PodacstDB.tt</DependentUpon>
-    </Compile>
-    <Compile Include="database\PodacstDB.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PodacstDB.edmx</DependentUpon>
+      <DependentUpon>PodcastDB.tt</DependentUpon>
     </Compile>
     <Compile Include="database\Podcast.cs">
-      <DependentUpon>PodacstDB.tt</DependentUpon>
+      <DependentUpon>PodcastDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="MainWindow%28DS%29.xaml.cs">
-      <DependentUpon>MainWindow%28DS%29.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="pages DS\AlbumPage.xaml.cs">
-      <DependentUpon>AlbumPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="pages DS\AlbumsPodcastsPage.xaml.cs">
-      <DependentUpon>AlbumsPodcastsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="pages DS\AuthorPage.xaml.cs">
-      <DependentUpon>AuthorPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="pages DS\EpisodePage.xaml.cs">
-      <DependentUpon>EpisodePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="pages DS\PodcastPage.xaml.cs">
-      <DependentUpon>PodcastPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="database\PodcastsDBDataSet.Designer.cs">
+    <Compile Include="database\PodcastDB.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>PodcastsDBDataSet.xsd</DependentUpon>
+      <DependentUpon>PodcastDB.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Tables.cs" />
-    <Page Include="MainWindow%28DS%29.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Compile Include="database\PodcastDB.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PodcastDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\PodcastDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PodcastDB.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="database\PodcastDBDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PodcastDBDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Page_DS.xaml.cs">
+      <DependentUpon>Page_DS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="pages\Page_EF.xaml.cs">
+      <DependentUpon>Page_EF.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Realizations.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -141,69 +128,20 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="pages_EF\AlbumsPage.xaml.cs">
-      <DependentUpon>AlbumsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="pages_EF\AuthorPage.xaml.cs">
-      <DependentUpon>AuthorPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="pages_EF\EpisodePage.xaml.cs">
-      <DependentUpon>EpisodePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="pages_EF\PodcastsAlbumsPage.xaml.cs">
-      <DependentUpon>PodcastsAlbumsPage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModels\DataSetDBViewModel.cs" />
-    <Compile Include="ViewModels\PodcastsVM.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="pages DS\AlbumPage.xaml">
+    <Page Include="pages\Page_DS.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="pages DS\AlbumsPodcastsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pages DS\AuthorPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pages DS\EpisodePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pages DS\PodcastPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pages_EF\AlbumsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pages_EF\AuthorPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pages_EF\EpisodePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pages_EF\PodcastsAlbumsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="pages_EF\PodcastsPage.xaml">
+    <Page Include="pages\Page_EF.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="pages_EF\PodcastsPage.xaml.cs">
-      <DependentUpon>PodcastsPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -221,24 +159,24 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="database\PodacstDB.edmx">
+    <EntityDeploy Include="database\PodcastDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PodacstDB.Designer.cs</LastGenOutput>
+      <LastGenOutput>PodcastDB.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="database\PodacstDB.edmx.diagram">
-      <DependentUpon>PodacstDB.edmx</DependentUpon>
+    <None Include="database\PodcastDB.edmx.diagram">
+      <DependentUpon>PodcastDB.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
-    <None Include="database\PodcastsDBDataSet.xsc">
-      <DependentUpon>PodcastsDBDataSet.xsd</DependentUpon>
+    <None Include="database\PodcastDBDataSet.xsc">
+      <DependentUpon>PodcastDBDataSet.xsd</DependentUpon>
     </None>
-    <None Include="database\PodcastsDBDataSet.xsd">
+    <None Include="database\PodcastDBDataSet.xsd">
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>PodcastsDBDataSet.Designer.cs</LastGenOutput>
+      <LastGenOutput>PodcastDBDataSet.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
-    <None Include="database\PodcastsDBDataSet.xss">
-      <DependentUpon>PodcastsDBDataSet.xsd</DependentUpon>
+    <None Include="database\PodcastDBDataSet.xss">
+      <DependentUpon>PodcastDBDataSet.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -251,17 +189,16 @@
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Content Include="database\PodacstDB.Context.tt">
+    <Content Include="database\PodcastDB.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PodacstDB.edmx</DependentUpon>
-      <LastGenOutput>PodacstDB.Context.cs</LastGenOutput>
+      <DependentUpon>PodcastDB.edmx</DependentUpon>
+      <LastGenOutput>PodcastDB.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="database\PodacstDB.tt">
+    <Content Include="database\PodcastDB.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PodacstDB.edmx</DependentUpon>
-      <LastGenOutput>PodacstDB.cs</LastGenOutput>
+      <DependentUpon>PodcastDB.edmx</DependentUpon>
+      <LastGenOutput>PodcastDB.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

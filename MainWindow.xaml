@@ -13,10 +13,8 @@
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
-            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <ComboBox Name="PageSelection" Margin="12" HorizontalAlignment="Right" VerticalAlignment="Center" SelectionChanged="onSelectedPageChanged" />
-        <Button Content="Go to DataSets" Click="onGoToDataSets_Click" Grid.Column="1" Margin="12" VerticalAlignment="Center" HorizontalAlignment="Left"/>
+        <ComboBox Name="PageSelection" Margin="12" HorizontalAlignment="Left" VerticalAlignment="Center" SelectionChanged="onSelectedPageChanged" />
         <Frame Grid.ColumnSpan="2" Grid.Row="1" Name="pages_EF" NavigationUIVisibility="Hidden" Margin="8" />
     </Grid>
 </Window>
