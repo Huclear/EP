@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="266ef7c4e1784e4e9942a268b83c38fa" Name="Diagram1">
+        <EntityTypeShape EntityType="PodcastsPlaylistsModel.Album" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PodcastsPlaylistsModel.AlbumsPodcasts" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PodcastsPlaylistsModel.Author" Width="1.5" PointX="0.75" PointY="2.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PodcastsPlaylistsModel.Episode" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PodcastsPlaylistsModel.Podcast" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <AssociationConnector Association="PodcastsPlaylistsModel.FK__Album__Author_ID__31B762FC" ManuallyRouted="false" />
+        <AssociationConnector Association="PodcastsPlaylistsModel.FK__AlbumsPod__Album__3493CFA7" ManuallyRouted="false" />
+        <AssociationConnector Association="PodcastsPlaylistsModel.FK__AlbumsPod__Podca__3587F3E0" ManuallyRouted="false" />
+        <AssociationConnector Association="PodcastsPlaylistsModel.FK__Podcast__Author___282DF8C2" ManuallyRouted="false" />
+        <AssociationConnector Association="PodcastsPlaylistsModel.FK__Episode__Podcast__2CF2ADDF" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,104 @@
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\bin\Release\Practice3.exe.config
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\bin\Release\Practice3.exe
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\bin\Release\Practice3.pdb
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\bin\Release\EntityFramework.dll
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\bin\Release\MaterialDesignColors.dll
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\bin\Release\MaterialDesignThemes.Wpf.dll
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\bin\Release\Microsoft.Xaml.Behaviors.dll
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\bin\Release\EntityFramework.xml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\bin\Release\MaterialDesignColors.pdb
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\bin\Release\MaterialDesignThemes.Wpf.pdb
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\bin\Release\MaterialDesignThemes.Wpf.xml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\bin\Release\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\bin\Release\Microsoft.Xaml.Behaviors.xml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\Practice3.csproj.AssemblyReference.cache
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\MainWindow(DS).g.cs
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\MainWindow.g.cs
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages DS\AlbumPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages DS\AlbumsPodcastsPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages DS\AuthorPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages DS\EpisodePage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages DS\PodcastPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages_EF\AlbumsPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages_EF\AuthorPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages_EF\EpisodePage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages_EF\PodcastsAlbumsPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages_EF\PodcastsPage.g.cs
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\App.g.cs
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\Practice3_Content.g.cs
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\Practice3_MarkupCompile.cache
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\Practice3_MarkupCompile.lref
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\App.baml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\MainWindow(DS).baml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\MainWindow.baml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages DS\AlbumPage.baml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages DS\AlbumsPodcastsPage.baml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages DS\AuthorPage.baml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages DS\EpisodePage.baml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages DS\PodcastPage.baml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages_EF\AlbumsPage.baml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages_EF\AuthorPage.baml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages_EF\EpisodePage.baml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages_EF\PodcastsAlbumsPage.baml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\pages_EF\PodcastsPage.baml
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\Practice3.g.resources
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\Practice3.Properties.Resources.resources
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\Practice3.csproj.GenerateResource.cache
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\Practice3.csproj.CoreCompileInputs.cache
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\Practice3.csproj.CopyComplete
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\Practice3.exe
+C:\Users\Kombucha\Desktop\УП\practice3\Practice2\Practice2\obj\Release\Practice3.pdb
+C:\Users\Kombucha\Desktop\Practice2\Practice2\bin\Release\Practice3.exe.config
+C:\Users\Kombucha\Desktop\Practice2\Practice2\bin\Release\Practice3.exe
+C:\Users\Kombucha\Desktop\Practice2\Practice2\bin\Release\Practice3.pdb
+C:\Users\Kombucha\Desktop\Practice2\Practice2\bin\Release\EntityFramework.dll
+C:\Users\Kombucha\Desktop\Practice2\Practice2\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Kombucha\Desktop\Practice2\Practice2\bin\Release\MaterialDesignColors.dll
+C:\Users\Kombucha\Desktop\Practice2\Practice2\bin\Release\MaterialDesignThemes.Wpf.dll
+C:\Users\Kombucha\Desktop\Practice2\Practice2\bin\Release\Microsoft.Xaml.Behaviors.dll
+C:\Users\Kombucha\Desktop\Practice2\Practice2\bin\Release\EntityFramework.xml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\bin\Release\MaterialDesignColors.pdb
+C:\Users\Kombucha\Desktop\Practice2\Practice2\bin\Release\MaterialDesignThemes.Wpf.pdb
+C:\Users\Kombucha\Desktop\Practice2\Practice2\bin\Release\MaterialDesignThemes.Wpf.xml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\bin\Release\Microsoft.Xaml.Behaviors.pdb
+C:\Users\Kombucha\Desktop\Practice2\Practice2\bin\Release\Microsoft.Xaml.Behaviors.xml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\Practice3.csproj.AssemblyReference.cache
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\MainWindow(DS).g.cs
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\MainWindow.g.cs
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages DS\AlbumPage.g.cs
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages DS\AlbumsPodcastsPage.g.cs
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages DS\AuthorPage.g.cs
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages DS\EpisodePage.g.cs
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages DS\PodcastPage.g.cs
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages_EF\AlbumsPage.g.cs
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages_EF\AuthorPage.g.cs
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages_EF\EpisodePage.g.cs
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages_EF\PodcastsAlbumsPage.g.cs
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages_EF\PodcastsPage.g.cs
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\App.g.cs
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\Practice3_Content.g.cs
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\Practice3_MarkupCompile.cache
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\Practice3_MarkupCompile.lref
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\App.baml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\MainWindow(DS).baml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\MainWindow.baml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages DS\AlbumPage.baml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages DS\AlbumsPodcastsPage.baml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages DS\AuthorPage.baml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages DS\EpisodePage.baml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages DS\PodcastPage.baml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages_EF\AlbumsPage.baml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages_EF\AuthorPage.baml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages_EF\EpisodePage.baml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages_EF\PodcastsAlbumsPage.baml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\pages_EF\PodcastsPage.baml
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\Practice3.g.resources
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\Practice3.Properties.Resources.resources
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\Practice3.csproj.GenerateResource.cache
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\Practice3.csproj.CoreCompileInputs.cache
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\Practice3.csproj.CopyComplete
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\Practice3.exe
+C:\Users\Kombucha\Desktop\Practice2\Practice2\obj\Release\Practice3.pdb
