@@ -32,83 +32,36 @@ namespace Practice4.pages_DS
             EpisodesDGr.ItemsSource = dbViewModel.Episodes.GetData();
         }
 
-        private void onSelectedEpisodeChanged(object sender, SelectionChangedEventArgs e)
-        {
-            try
-            {
-                if(EpisodesDGr.SelectedItem != null && EpisodesDGr.SelectedItem is DataRowView episode)
-                {
-                    NameInput.Text = episode[1] as string;
-                    DescriptionInput.Text = episode[2] as string;
-                    DurationInput.Text = Convert.ToDecimal(episode[3]).ToString();
-                    PodcastIDSelector.SelectedItem = (PodcastIDSelector.ItemsSource as List<PodcastDBDataSet.PodcastRow>).FirstOrDefault(row => row.ID_Podcast == Convert.ToInt32(episode[4]));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error); ;
-            }
+        private void OnClearFilter_Click(object sender, RoutedEventArgs e)
+        {   
+            DurationInput.Text = NameInput.Text = DescriptionInput.Text = string.Empty;
+            PodcastIDSelector.SelectedItem = null;
+            EpisodesDGr.ItemsSource = dbViewModel.Episodes.GetData();
         }
 
-        private void onDeleteEpisode_Click(object sender, RoutedEventArgs e)
+        private void OnSelectedPodcast_Changed(object sender, SelectionChangedEventArgs e)
         {
-            try
-            {
-                if (EpisodesDGr.SelectedItem != null && EpisodesDGr.SelectedItem is DataRowView episode)
-                {
-                    var id = Convert.ToInt32(episode[0]);
-                    dbViewModel.DeleteFrom(Tables.Episodes, id);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error); ;
-            }
-            finally
-            {
+            if (PodcastIDSelector.SelectedItem != null && PodcastIDSelector.SelectedItem is PodcastDBDataSet.PodcastRow author)
+                EpisodesDGr.ItemsSource = dbViewModel.Episodes.GetDataByPodcast(author.ID_Podcast);
+            else
                 EpisodesDGr.ItemsSource = dbViewModel.Episodes.GetData();
-            }
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void OnSortingText_Changed(object sender, TextChangedEventArgs e)
         {
-            try
+            decimal dur;
+            if (sender is TextBox txt)
             {
-                if (PodcastIDSelector.SelectedItem != null && PodcastIDSelector.SelectedItem is PodcastDBDataSet.PodcastRow podcast)
+                if (txt.Text != string.Empty)
                 {
-                    var duration = Convert.ToDecimal(DurationInput.Text);
-                    dbViewModel.AddEpisode(NameInput.Text, DescriptionInput.Text, duration, podcast.ID_Podcast);
+                    if (txt.Name.ToLower().Contains("name"))
+                        EpisodesDGr.ItemsSource = dbViewModel.Episodes.GetDataByName(txt.Text);
+                    else if (txt.Name.ToLower().Contains("description"))
+                        EpisodesDGr.ItemsSource = dbViewModel.Episodes.GetDataByDescription(txt.Text);
+                    else if(txt.Name.ToLower().Contains("duration"))
+                        if(decimal.TryParse(txt.Text, out dur))
+                            EpisodesDGr.ItemsSource = dbViewModel.Episodes.GetDataByDuration(dur);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error); ;
-            }
-            finally
-            {
-                EpisodesDGr.ItemsSource = dbViewModel.Episodes.GetData();
-            }
-        }
-
-        private void OnSaveChanges_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                if (EpisodesDGr.SelectedItem != null && EpisodesDGr.SelectedItem is DataRowView episode
-                    && PodcastIDSelector.SelectedItem != null && PodcastIDSelector.SelectedItem is PodcastDBDataSet.PodcastRow podcast)
-                {
-                    var id = Convert.ToInt32(episode[0]);
-                    var duration = Convert.ToDecimal(DurationInput.Text);
-                    dbViewModel.UpdateEpisode(NameInput.Text, DescriptionInput.Text, duration, podcast.ID_Podcast, id);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            finally
-            {
-                EpisodesDGr.ItemsSource = dbViewModel.Episodes.GetData();
             }
         }
     }

@@ -28,5 +28,10 @@ namespace Practice4.pages
             authorsVM = new AuthorPageVM();
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NameSortEnable.IsChecked = SurnameSortEnable.IsChecked = PatronymicSortEnable.IsChecked = NicknameSortEnable.IsChecked = AgeSortEnable.IsChecked = false;
+        }
     }
 }

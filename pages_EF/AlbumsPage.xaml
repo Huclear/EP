@@ -35,17 +35,17 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <CheckBox HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableNameSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
+                <CheckBox Name="NameSortEnable" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableNameSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
                 <TextBlock Text="Name:" FontSize="16" Grid.Column="1" FontFamily="Sans" Padding="8" TextAlignment="Center"/>
             </Grid>
-            <TextBox Text="{Binding Path=CurrentNameSortingm, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1" Margin="8" FontSize="16" FontFamily="Sans"/>
+            <TextBox Text="{Binding Path=CurrentNameSorting, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="1" Margin="8" FontSize="16" FontFamily="Sans"/>
 
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <CheckBox HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableDescriptionSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
+                <CheckBox Name="DescriptionSortEnable" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableDescriptionSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
             <TextBlock Grid.Column="1" Text="Description:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
             </Grid>
             <TextBox Text="{Binding Path=CurrentDescriptionSorting, UpdateSourceTrigger=PropertyChanged}" Grid.Column="1" Grid.Row="2" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
@@ -55,12 +55,12 @@
                     <ColumnDefinition Width="Auto"/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <CheckBox HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableAuthorSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
+                <CheckBox Name="AuthorSortEnable" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableAuthorSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
                 <TextBlock Grid.Column="1" Text="Author ID:" FontSize="16" FontFamily="Sans" Padding="8"  TextAlignment="Center"/>
             </Grid>
             <ComboBox Name="AuthorID_Selection" Grid.Column="1" Grid.Row="3" SelectedItem="{Binding CurrentAuthorSorting, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding Authors}" Margin="8"/>
             
-            <Button Content="Clear Filtering" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="8" Command="{Binding clearAlbumsFilterCommand}" CommandParameter="{Binding ElementName=AlbumsDGr, Path=ItemsSource}"/>
+            <Button Content="Clear filters" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="8" Command="{Binding clearAlbumsFilterCommand}" CommandParameter="{Binding ElementName=AlbumsDGr, Path=ItemsSource}" Click="Button_Click"/>
         </Grid>
     </Grid>
 </Page>

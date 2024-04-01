@@ -30,80 +30,30 @@ namespace Practice4.pages_DS
             AuthorsDGr.ItemsSource = dbViewModel.Authors.GetData();
         }
 
-        private void onDelete_Click(object sender, RoutedEventArgs e)
+        private void OnClearFilter_Click(object sender, RoutedEventArgs e)
         {
-            if (AuthorsDGr.SelectedItem != null && AuthorsDGr.SelectedItem is DataRowView author)
-            {
-                try
-                {
-                    var id = Convert.ToInt32(author[0]);
-                    dbViewModel.DeleteFrom(Tables.Author, id);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                finally
-                {
-                    AuthorsDGr.ItemsSource = dbViewModel.Authors.GetData();
-                }
-            }
+            NameInput.Text = SurnameInput.Text = PatronymicInput.Text = NicknameInput.Text = AgeInput.Text = string.Empty;
+            AuthorsDGr.ItemsSource = dbViewModel.Authors.GetData();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void OnSortingString_Changed(object sender, TextChangedEventArgs e)
         {
-            try
+            int age;
+            if (sender is TextBox txt)
             {
-                var age = Convert.ToInt32(AgeInput.Text);
-                dbViewModel.AddAuthor(NameInput.Text, SurnameInput.Text, PatronymicInput.Text, NicknameInput.Text, age);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            finally
-            {
-                AuthorsDGr.ItemsSource = dbViewModel.Authors.GetData();
-            }
-        }
-
-        private void OnSaveChanges_Click(object sender, RoutedEventArgs e)
-        {
-            if (AuthorsDGr.SelectedItem != null && AuthorsDGr.SelectedItem is DataRowView author)
-            {
-                try
+                if (txt.Text != string.Empty)
                 {
-                    var id = Convert.ToInt32(author[0]);
-                    var age = Convert.ToInt32(AgeInput.Text);
-                    dbViewModel.UpdateAuthor(NameInput.Text, SurnameInput.Text, PatronymicInput.Text, NicknameInput.Text, age, id);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                finally
-                {
-                    AuthorsDGr.ItemsSource = dbViewModel.Authors.GetData();
-                }
-            }
-        }
-
-        private void onSelectedItemsChanged(object sender, SelectionChangedEventArgs e)
-        {
-            if (AuthorsDGr.SelectedItem is DataRowView author)
-            {
-                try
-                {
-                    NameInput.Text = author[1] as string;
-                    SurnameInput.Text = author[2] as string;
-                    PatronymicInput.Text = author[3] as string;
-                    NicknameInput.Text = author[4] as string;
-                    AgeInput.Text = Convert.ToInt32(author[5]).ToString();
-
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                    if (txt.Name.ToLower().Contains("surname"))
+                        AuthorsDGr.ItemsSource = dbViewModel.Authors.GetDataBySurname(txt.Text);
+                    else if (txt.Name.ToLower().Contains("nickname"))
+                        AuthorsDGr.ItemsSource = dbViewModel.Authors.GetDataByNickname(txt.Text);
+                    else if (txt.Name.ToLower().Contains("name"))
+                        AuthorsDGr.ItemsSource = dbViewModel.Authors.GetDataByName(txt.Text);
+                    else if (txt.Name.ToLower().Contains("patronymic"))
+                        AuthorsDGr.ItemsSource = dbViewModel.Authors.GetDataByPatronymic(txt.Text);
+                    else if (txt.Name.ToLower().Contains("age"))
+                        if (int.TryParse(txt.Text, out age))
+                            AuthorsDGr.ItemsSource = dbViewModel.Authors.GetDataByAge(age);
                 }
             }
         }

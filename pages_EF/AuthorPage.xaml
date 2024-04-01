@@ -7,7 +7,7 @@
       xmlns:rules="clr-namespace:Practice4.Rules"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AuthorPage" Background="White" DataContext="{Binding RelativeSource={RelativeSource Self},Path=podcastsVM}">
+      Title="AuthorPage" Background="White" DataContext="{Binding RelativeSource={RelativeSource Self},Path=authorsVM}">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -17,20 +17,8 @@
             <ColumnDefinition Width="1.75*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Menu Grid.ColumnSpan="2">
-            <MenuItem Header="Delete Author" Command="{Binding deleteAuthorCommand}" CommandParameter="{Binding ElementName=AuthorsDGr, Path=SelectedItem}">
-                <MenuItem.Icon>
-                    <Image Source="\Icons\cross_icon.png"/>
-                </MenuItem.Icon>
-            </MenuItem>
-            <MenuItem Header="Add new Author" Click="MenuItem_Click">
-                <MenuItem.Icon>
-                    <Image Source="\Icons\add.png"/>
-                </MenuItem.Icon>
-            </MenuItem>
-        </Menu>
         <DataGrid Grid.Row="1" Name="AuthorsDGr" Margin="8" ItemsSource="{Binding Authors}"/>
-        <Grid Grid.Column="1" Grid.Row="1" DataContext="{Binding ElementName=AuthorsDGr, Path=SelectedItem}">
+        <Grid Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
                 <RowDefinition/>
@@ -41,37 +29,42 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <TextBlock Grid.ColumnSpan="2" Padding="8" Text="Author info" HorizontalAlignment="Center" FontSize="20" FontFamily="Sans" FontWeight="Bold"/>
-            
-            <TextBlock Grid.Row="1" Text="Name:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center"/>
-            <TextBox Text="{Binding Path=Author_Name}" Grid.Column="1" Grid.Row="1" Margin="8" FontSize="16" FontFamily="Sans"/>
-            
-            <TextBlock Grid.Row="2" Text="Surname:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
-            <TextBox Text="{Binding Path=Author_SurName}" Grid.Column="1" Grid.Row="2" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
-            
-            <TextBlock Grid.Row="3" Text="Patronymic:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
-            <TextBox Text="{Binding Path=Author_Patronymic}" Grid.Column="1" Grid.Row="3" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
-            
-            <TextBlock Grid.Row="4" Text="Nickname:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
-            <TextBox Text="{Binding Path=Author_Nickname}" Grid.Column="1" Grid.Row="4" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
-            
+            <TextBlock Grid.ColumnSpan="3" Padding="8" Text="Author info" HorizontalAlignment="Center" FontSize="20" FontFamily="Sans" FontWeight="Bold"/>
 
-            <TextBlock Text="Age:" Grid.Row="5" FontSize="16" FontFamily="Sans" Padding="8"  TextAlignment="Center"/>
-            <TextBox Grid.Column="1" Grid.Row="5" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150">
+            <CheckBox Name="NameSortEnable" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableNameSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="Name:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center"/>
+            <TextBox Text="{Binding Path=CurrentNameSorting, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" Grid.Row="1" Margin="8" FontSize="16" FontFamily="Sans"/>
+
+            <CheckBox Name="SurnameSortEnable" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableSurnameSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="Surname:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
+            <TextBox Text="{Binding Path=CurrentSurnameSorting, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" Grid.Row="2" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+
+            <CheckBox Name="PatronymicSortEnable" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnablePatronymicSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
+            <TextBlock Grid.Column="1" Grid.Row="3" Text="Patronymic:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
+            <TextBox Text="{Binding Path=CurrentPatronymicSorting, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" Grid.Row="3" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+
+            <CheckBox Name="NicknameSortEnable" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableNicknameSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
+            <TextBlock Grid.Column="1" Grid.Row="4" Text="Nickname:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
+            <TextBox Text="{Binding Path=CurrentNicknameSorting, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" Grid.Row="4" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+
+            <CheckBox Name="AgeSortEnable" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableAgeSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
+            <TextBlock Grid.Column="1" Text="Age:" Grid.Row="5" FontSize="16" FontFamily="Sans" Padding="8"  TextAlignment="Center"/>
+            <TextBox Grid.Column="2" Grid.Row="5" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150">
                 <TextBox.Text>
-                    <Binding Path="Author_Age" UpdateSourceTrigger="PropertyChanged" NotifyOnValidationError="True">
+                    <Binding Path="CurrentAgeSorting" UpdateSourceTrigger="PropertyChanged" NotifyOnValidationError="True">
                         <Binding.ValidationRules>
                             <rules:NumInputRule />
-                            <ExceptionValidationRule />
+                            <ExceptionValidationRule/>
                         </Binding.ValidationRules>
                     </Binding>
                 </TextBox.Text>
             </TextBox>
             
-            <Button Content="Save changes" Grid.Row="6" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="8" Click="OnSaveChanges_Click"/>
+            <Button Content="Clear fiters" Grid.Row="6" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="8" Command="{Binding clearAuthorsFilterCommand}" CommandParameter="{Binding ElementName=AuthorsDGr, Path=ItemsSource}" Click="Button_Click"/>
         </Grid>
     </Grid>
 </Page>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Practice4.ViewModels.EF;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,22 +21,17 @@ namespace Practice4.pages
     /// </summary>
     public partial class EpisodePage : Page
     {
-        public PodcastsVM podcastsVM { get; set; }
+        public EpisodePageVM episodesVM { get; set; }
 
-        public EpisodePage(PodcastsVM _podcastsVM)
+        public EpisodePage()
         {
-            podcastsVM = _podcastsVM;
+            episodesVM = new EpisodePageVM();
             InitializeComponent();
         }
 
-        private void OnSaveChanges_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            podcastsVM.SaveChanges();
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            podcastsVM.AddEpisode();
+            NameSortEnable.IsChecked = DescriptionSortEnable.IsChecked = PodcastSortEnable.IsChecked = DurationSortEnable.IsChecked = false;
         }
     }
 }

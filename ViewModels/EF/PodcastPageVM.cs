@@ -7,11 +7,24 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows;
+using Practice4.Commands;
 
 namespace Practice4.ViewModels.EF
 {
     public class PodcastPageVM
     {
+        private RelayCommand<ObservableCollection<Podcast>> _clearAlbumsFilterCommand = null;
+        public RelayCommand<ObservableCollection<Podcast>> clearAlbumsFilterCommand => _clearAlbumsFilterCommand ?? (new RelayCommand<ObservableCollection<Podcast>>(ClearFilters));
+
+        private RelayCommand<bool> _changeEnableNameSortCommand = null;
+        public RelayCommand<bool> changeEnableNameSortCommand => _changeEnableNameSortCommand ?? (new RelayCommand<bool>(ChangeEnableSortName));
+
+        private RelayCommand<bool> _changeEnableDescriptionSortCommand = null;
+        public RelayCommand<bool> changeEnableDescriptionSortCommand => _changeEnableDescriptionSortCommand ?? (new RelayCommand<bool>(ChangeEnableSortDescription));
+
+        private RelayCommand<bool> _changeEnableAuthorSortCommand = null;
+        public RelayCommand<bool> changeEnableAuthorSortCommand => _changeEnableAuthorSortCommand ?? (new RelayCommand<bool>(ChangeEnableSortAuthor));
+
 
         public string CurrentNameSorting { get; set; } = string.Empty;
         public string CurrentDescriptionSorting { get; set; } = string.Empty;
@@ -19,13 +32,28 @@ namespace Practice4.ViewModels.EF
 
         public PodcastDBContext dbContext { get; private set; }
         public ObservableCollection<Podcast> Podcasts { get; set; }
+        public ObservableCollection<Author> Authors { get; set; }
 
         public PodcastPageVM()
         {
             dbContext = new PodcastDBContext();
             Podcasts = new ObservableCollection<Podcast>(dbContext.Podcast.ToList());
+            Authors = new ObservableCollection<Author>(dbContext.Author.ToList());
         }
 
+        public void RefreshCollection()
+        {
+            CollectionViewSource.GetDefaultView(Podcasts).Refresh();
+        }
+
+        public void ClearFilters(ObservableCollection<Podcast> podcasts)
+        {
+            if (podcasts != null)
+            {
+                var collection = CollectionViewSource.GetDefaultView(podcasts);
+                collection.Filter = null;
+            }
+        }
 
         private bool SortByName(object podcast)
         {
@@ -33,22 +61,24 @@ namespace Practice4.ViewModels.EF
             return ((Podcast)podcast).Podcast_Name.ToLower().Contains(CurrentNameSorting.ToLower());
         }
 
-        public void EnableSortByName()
+        public void ChangeEnableSortName(bool isEnabled)
         {
             var collection = CollectionViewSource.GetDefaultView(Podcasts);
-            collection.Filter += SortByName;
-        }
-        public void DisableSortByName()
-        {
-            var collection = CollectionViewSource.GetDefaultView(Podcasts);
-            try
+            if (isEnabled)
             {
-                if (collection.Filter != null)
-                    collection.Filter -= SortByName;
+                collection.Filter += SortByName;
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                try
+                {
+                    if (collection.Filter != null)
+                        collection.Filter -= SortByName;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 
@@ -58,23 +88,24 @@ namespace Practice4.ViewModels.EF
             if (podcast == null || !(podcast is Podcast) || (podcast as Podcast).Podcast_Description == null) return false;
             return ((Podcast)podcast).Podcast_Description.ToLower().Contains(CurrentDescriptionSorting.ToLower());
         }
-
-        public void EnableSortByDescription()
+        public void ChangeEnableSortDescription(bool isEnabled)
         {
             var collection = CollectionViewSource.GetDefaultView(Podcasts);
-            collection.Filter += SortByDescription;
-        }
-        public void DisableSortByDescription()
-        {
-            var collection = CollectionViewSource.GetDefaultView(Podcasts);
-            try
+            if (isEnabled)
             {
-                if (collection.Filter != null)
-                    collection.Filter -= SortByDescription;
+                collection.Filter += SortByDescription;
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                try
+                {
+                    if (collection.Filter != null)
+                        collection.Filter -= SortByDescription;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 
@@ -83,23 +114,24 @@ namespace Practice4.ViewModels.EF
             if (podcast == null || !(podcast is Podcast) || (podcast as Podcast).Author == null || CurrentAuthorSorting == null) return false;
             return ((Podcast)podcast).Author.ID_Author == CurrentAuthorSorting.ID_Author;
         }
-
-        public void EnableSortByAuthor()
+        public void ChangeEnableSortAuthor(bool isEnabled)
         {
             var collection = CollectionViewSource.GetDefaultView(Podcasts);
-            collection.Filter += SortByAuthor;
-        }
-        public void DisableSortByAuthor()
-        {
-            var collection = CollectionViewSource.GetDefaultView(Podcasts);
-            try
+            if (isEnabled)
             {
-                if (collection.Filter != null)
-                    collection.Filter -= SortByAuthor;
+                collection.Filter += SortByAuthor;
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                try
+                {
+                    if (collection.Filter != null)
+                        collection.Filter -= SortByAuthor;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
     }

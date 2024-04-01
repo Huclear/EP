@@ -20,5 +20,10 @@ namespace Practice4.database
     
         public virtual Album Album { get; set; }
         public virtual Podcast Podcast { get; set; }
+
+        public override string ToString()
+        {
+            return $"Album: {Album_ID}/ Podcast: {Podcast_ID}";
+        }
     }
 }

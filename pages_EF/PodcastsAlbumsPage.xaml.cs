@@ -1,4 +1,5 @@
 ﻿using Practice4.database;
+using Practice4.ViewModels.EF;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,24 +22,17 @@ namespace Practice4.pages
     /// </summary>
     public partial class PodcastsAlbumsPage : Page
     {
-        public PodcastsVM podcastsVM { get; set; }
+        public AlbumPodcastsPageVM albumsPodcastsVM { get; set; }
 
-        public PodcastsAlbumsPage(PodcastsVM _podcastsVM)
+        public PodcastsAlbumsPage()
         {
-            podcastsVM = _podcastsVM;
+            albumsPodcastsVM = new AlbumPodcastsPageVM();
             InitializeComponent();
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (PodcastID_Selection.SelectedItem != null && PodcastID_Selection.SelectedItem is Podcast podcast
-                && AlbumID_Selection.SelectedItem != null && AlbumID_Selection.SelectedItem is Album album)
-                    podcastsVM.AddAlbumsPodcasts(podcast.ID_Podcast, album.ID_Album);
-        }
-
-        private void OnSaveChanges_Click(object sender, RoutedEventArgs e)
-        {
-            podcastsVM.SaveChanges();
+            AlbumSortEnable.IsChecked = PodcastSortEnable.IsChecked = false;
         }
     }
 }

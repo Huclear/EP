@@ -8,11 +8,27 @@ using System.Threading.Tasks;
 using System.Windows.Data;
 using System.Windows;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Practice4.Commands;
 
 namespace Practice4.ViewModels.EF
 {
     public class EpisodePageVM
     {
+
+        private RelayCommand<ObservableCollection<Episode>> _clearFiltersCommand = null;
+        public RelayCommand<ObservableCollection<Episode>> clearFiltersCommand => _clearFiltersCommand ?? (new RelayCommand<ObservableCollection<Episode>>(ClearFilter));
+
+        private RelayCommand<bool> _changeEnableNameSortCommand = null;
+        public RelayCommand<bool> changeEnableNameSortCommand => _changeEnableNameSortCommand ?? (new RelayCommand<bool>(ChangeEnableSortName));
+
+        private RelayCommand<bool> _changeEnableDescriptionSortCommand = null;
+        public RelayCommand<bool> changeEnableDescriptionSortCommand => _changeEnableDescriptionSortCommand ?? (new RelayCommand<bool>(ChangeEnableSortDescription));
+
+        private RelayCommand<bool> _changeEnableDurationSortCommand = null;
+        public RelayCommand<bool> changeEnableDurationSortCommand => _changeEnableDurationSortCommand ?? (new RelayCommand<bool>(ChangeEnableSortDuration));
+
+        private RelayCommand<bool> _changeEnablePodcastSortCommand = null;
+        public RelayCommand<bool> changeEnablePodcastSortCommand => _changeEnablePodcastSortCommand ?? (new RelayCommand<bool>(ChangeEnableSortPodcast));
 
         public string CurrentNameSorting { get; set; } = string.Empty;
         public string CurrentDescriptionSorting { get; set; } = string.Empty;
@@ -21,11 +37,19 @@ namespace Practice4.ViewModels.EF
 
         public PodcastDBContext dbContext { get; private set; }
         public ObservableCollection<Episode> Episodes { get; set; }
+        public ObservableCollection<Podcast> Podcasts { get; set; }
 
         public EpisodePageVM()
         {
             dbContext = new PodcastDBContext();
             Episodes = new ObservableCollection<Episode>(dbContext.Episode.ToList());
+            Podcasts = new ObservableCollection<Podcast>(dbContext.Podcast.ToList());
+        }
+
+        public void ClearFilter(ICollection<Episode> episodes)
+        {
+            var collection = CollectionViewSource.GetDefaultView(episodes);
+            collection.Filter = null;
         }
 
 
@@ -35,22 +59,22 @@ namespace Practice4.ViewModels.EF
             return ((Episode)episode).Episode_Name.ToLower().Contains(CurrentNameSorting.ToLower());
         }
 
-        public void EnableSortByName()
+        public void ChangeEnableSortName(bool isEnabled)
         {
             var collection = CollectionViewSource.GetDefaultView(Episodes);
-            collection.Filter += SortByName;
-        }
-        public void DisableSortByName()
-        {
-            var collection = CollectionViewSource.GetDefaultView(Episodes);
-            try
+            if (isEnabled)
+                collection.Filter += SortByName;
+            else
             {
-                if (collection.Filter != null)
-                    collection.Filter -= SortByName;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                try
+                {
+                    if (collection.Filter != null)
+                        collection.Filter -= SortByName;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 
@@ -61,22 +85,22 @@ namespace Practice4.ViewModels.EF
             return ((Episode)episode).Episode_Description.ToLower().Contains(CurrentDescriptionSorting.ToLower());
         }
 
-        public void EnableSortByDescription()
+        public void ChangeEnableSortDescription(bool isEnabled)
         {
             var collection = CollectionViewSource.GetDefaultView(Episodes);
-            collection.Filter += SortByDescription;
-        }
-        public void DisableSortByDescription()
-        {
-            var collection = CollectionViewSource.GetDefaultView(Episodes);
-            try
+            if (isEnabled)
+                collection.Filter += SortByDescription;
+            else
             {
-                if (collection.Filter != null)
-                    collection.Filter -= SortByDescription;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                try
+                {
+                    if (collection.Filter != null)
+                        collection.Filter -= SortByDescription;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 
@@ -86,22 +110,22 @@ namespace Practice4.ViewModels.EF
             return ((Episode)podcast).Podcast_ID == CurrentPodcastSorting.ID_Podcast;
         }
 
-        public void EnableSortByPodcast()
+        public void ChangeEnableSortPodcast(bool isEnabled)
         {
             var collection = CollectionViewSource.GetDefaultView(Episodes);
-            collection.Filter += SortByPodcast;
-        }
-        public void DisableSortByPodcast()
-        {
-            var collection = CollectionViewSource.GetDefaultView(Episodes);
-            try
+            if (isEnabled)
+                collection.Filter += SortByPodcast;
+            else
             {
-                if (collection.Filter != null)
-                    collection.Filter -= SortByPodcast;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                try
+                {
+                    if (collection.Filter != null)
+                        collection.Filter -= SortByPodcast;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
 
@@ -110,22 +134,22 @@ namespace Practice4.ViewModels.EF
             if (episode == null || !(episode is Episode) || (episode as Episode).Episode_Duration == null) return false;
             return ((Episode)episode).Episode_Duration == CurrentDurationSorting;
         }
-        public void EnableSortByDuration()
+        public void ChangeEnableSortDuration(bool isEnabled)
         {
             var collection = CollectionViewSource.GetDefaultView(Episodes);
-            collection.Filter += SortByDuration;
-        }
-        public void DisableSortByDuration()
-        {
-            var collection = CollectionViewSource.GetDefaultView(Episodes);
-            try
+            if (isEnabled)
+                collection.Filter += SortByDuration;
+            else
             {
-                if (collection.Filter != null)
-                    collection.Filter -= SortByDuration;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                try
+                {
+                    if (collection.Filter != null)
+                        collection.Filter -= SortByDuration;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             }
         }
     }

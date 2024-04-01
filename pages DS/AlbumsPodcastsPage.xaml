@@ -16,19 +16,7 @@
             <ColumnDefinition Width="1.75*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Menu Grid.ColumnSpan="2">
-            <MenuItem Header="Delete Album/Podcast" Click="onDeleteAlbumPodcasts">
-                <MenuItem.Icon>
-                    <Image Source="\Icons\cross_icon.png"/>
-                </MenuItem.Icon>
-            </MenuItem>
-            <MenuItem Header="Add new Album/Podcasts" Click="MenuItem_Click">
-                <MenuItem.Icon>
-                    <Image Source="\Icons\add.png"/>
-                </MenuItem.Icon>
-            </MenuItem>
-        </Menu>
-        <DataGrid Grid.Row="1" Name="AlbumsPodcastsDGr" Margin="8" SelectionChanged="onSelectedAlbumPodcast_Changed"/>
+        <DataGrid Grid.Row="1" Name="AlbumsPodcastsDGr" Margin="8"/>
         <Grid Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -43,12 +31,12 @@
             <TextBlock Grid.ColumnSpan="2" Padding="8" Text="Album/Podcast info" HorizontalAlignment="Center" FontSize="20" FontFamily="Sans" FontWeight="Bold"/>
 
             <TextBlock Grid.Row="1" Text="Podcast ID:" FontSize="16" FontFamily="Sans" Padding="8"  TextAlignment="Center"/>
-            <ComboBox ItemTemplate="{StaticResource ResourceKey=PodcastComboBoxDataTemplate}" Name="PodcastID_Selection" Grid.Column="1" Grid.Row="1"  Margin="8"/>
+            <ComboBox SelectionChanged="OnSelectedSortingItem_Changed" ItemTemplate="{StaticResource ResourceKey=PodcastComboBoxDataTemplate}" Name="PodcastID_Selection" Grid.Column="1" Grid.Row="1"  Margin="8"/>
 
             <TextBlock Grid.Row="2" Text="Album ID:" FontSize="16" FontFamily="Sans" Padding="8"  TextAlignment="Center"/>
-            <ComboBox ItemTemplate="{StaticResource ResourceKey=AlbumComboBoxDataTemplate}" Name="AlbumID_Selection" Grid.Column="1" Grid.Row="2" Margin="8"/>
+            <ComboBox SelectionChanged="OnSelectedSortingItem_Changed" ItemTemplate="{StaticResource ResourceKey=AlbumComboBoxDataTemplate}" Name="AlbumID_Selection" Grid.Column="1" Grid.Row="2" Margin="8"/>
 
-            <Button Content="Save changes" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="8" Click="OnSaveChanges_Click"/>
+            <Button Content="Clear filter" Click="OnClearFilter_Click" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="8"/>
         </Grid>
     </Grid>
 </Page>

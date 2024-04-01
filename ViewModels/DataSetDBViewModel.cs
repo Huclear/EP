@@ -16,7 +16,7 @@ namespace Practice4.ViewModels
 {
     public class DataSetDBViewModel
     {
-        public PodcastsPlaylistsDataSet ctx { get; private set; }
+        public PodcastDBDataSet ctx { get; private set; }
         public AuthorTableAdapter Authors { get; private set; }
         public AlbumsPodcastsTableAdapter AlbumsPodcasts { get; private set; }
         public AlbumTableAdapter Albums { get; private set; }
@@ -26,7 +26,7 @@ namespace Practice4.ViewModels
 
         public DataSetDBViewModel()
         {
-            ctx = new PodcastsPlaylistsDataSet();
+            ctx = new PodcastDBDataSet();
             Authors = new AuthorTableAdapter();
             AlbumsPodcasts = new AlbumsPodcastsTableAdapter();
             Albums = new AlbumTableAdapter();

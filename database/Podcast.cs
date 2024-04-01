@@ -27,9 +27,14 @@ namespace Practice4.database
         public int Author_ID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<AlbumsPodcasts> AlbumsPodcasts { get; set; }
+        public virtual ICollection<AlbumsPodcasts> AlbumsPodcasts { private get; set; }
         public virtual Author Author { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Episode> Episode { get; set; }
+        public virtual ICollection<Episode> Episode { private get; set; }
+
+        public override string ToString()
+        {
+            return Podcast_Name;
+        }
     }
 }

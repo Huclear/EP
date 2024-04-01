@@ -22,7 +22,7 @@ namespace Practice4.database {
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
     [global::System.Xml.Serialization.XmlRootAttribute("PodcastsPlaylistsDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class PodcastsPlaylistsDataSet : global::System.Data.DataSet {
+    public partial class PodcastDBDataSet : global::System.Data.DataSet {
         
         private AlbumDataTable tableAlbum;
         
@@ -48,7 +48,7 @@ namespace Practice4.database {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public PodcastsPlaylistsDataSet() {
+        public PodcastDBDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -59,7 +59,7 @@ namespace Practice4.database {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        protected PodcastsPlaylistsDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected PodcastDBDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -197,7 +197,7 @@ namespace Practice4.database {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            PodcastsPlaylistsDataSet cln = ((PodcastsPlaylistsDataSet)(base.Clone()));
+            PodcastDBDataSet cln = ((PodcastDBDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -388,7 +388,7 @@ namespace Practice4.database {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            PodcastsPlaylistsDataSet ds = new PodcastsPlaylistsDataSet();
+            PodcastDBDataSet ds = new PodcastDBDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -699,7 +699,7 @@ namespace Practice4.database {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PodcastsPlaylistsDataSet ds = new PodcastsPlaylistsDataSet();
+                PodcastDBDataSet ds = new PodcastDBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -997,7 +997,7 @@ namespace Practice4.database {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PodcastsPlaylistsDataSet ds = new PodcastsPlaylistsDataSet();
+                PodcastDBDataSet ds = new PodcastDBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1337,7 +1337,7 @@ namespace Practice4.database {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PodcastsPlaylistsDataSet ds = new PodcastsPlaylistsDataSet();
+                PodcastDBDataSet ds = new PodcastDBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1663,7 +1663,7 @@ namespace Practice4.database {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PodcastsPlaylistsDataSet ds = new PodcastsPlaylistsDataSet();
+                PodcastDBDataSet ds = new PodcastDBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1974,7 +1974,7 @@ namespace Practice4.database {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                PodcastsPlaylistsDataSet ds = new PodcastsPlaylistsDataSet();
+                PodcastDBDataSet ds = new PodcastDBDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2886,13 +2886,13 @@ SELECT ID_Album, Album_Name, Album_Description, Author_ID FROM Album WHERE (ID_A
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT ID_Album, Album_Name, Album_Description, Author_ID\r\nFROM     Album\r\nWHERE " +
-                " (Album_Description LIKE @Searching_Description)";
+                " (Album_Description LIKE \'%\'+@Searching_Description+\'%\')";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Description", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "Album_Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT ID_Album, Album_Name, Album_Description, Author_ID\r\nFROM     Album\r\nWHERE " +
-                " (Album_Name LIKE @Searching_Name)";
+                " (Album_Name LIKE \'%\'+@Searching_Name+\'%\')";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Album_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -2901,7 +2901,7 @@ SELECT ID_Album, Album_Name, Album_Description, Author_ID FROM Album WHERE (ID_A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PodcastsPlaylistsDataSet.AlbumDataTable dataTable) {
+        public virtual int Fill(PodcastDBDataSet.AlbumDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -2914,9 +2914,9 @@ SELECT ID_Album, Album_Name, Album_Description, Author_ID FROM Album WHERE (ID_A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PodcastsPlaylistsDataSet.AlbumDataTable GetData() {
+        public virtual PodcastDBDataSet.AlbumDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PodcastsPlaylistsDataSet.AlbumDataTable dataTable = new PodcastsPlaylistsDataSet.AlbumDataTable();
+            PodcastDBDataSet.AlbumDataTable dataTable = new PodcastDBDataSet.AlbumDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2925,10 +2925,10 @@ SELECT ID_Album, Album_Name, Album_Description, Author_ID FROM Album WHERE (ID_A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.AlbumDataTable GetDataByAuthor(int Searching_Author) {
+        public virtual PodcastDBDataSet.AlbumDataTable GetDataByAuthor(int Searching_Author) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Searching_Author));
-            PodcastsPlaylistsDataSet.AlbumDataTable dataTable = new PodcastsPlaylistsDataSet.AlbumDataTable();
+            PodcastDBDataSet.AlbumDataTable dataTable = new PodcastDBDataSet.AlbumDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2937,7 +2937,7 @@ SELECT ID_Album, Album_Name, Album_Description, Author_ID FROM Album WHERE (ID_A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.AlbumDataTable GetDataByDescription(string Searching_Description) {
+        public virtual PodcastDBDataSet.AlbumDataTable GetDataByDescription(string Searching_Description) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((Searching_Description == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -2945,7 +2945,7 @@ SELECT ID_Album, Album_Name, Album_Description, Author_ID FROM Album WHERE (ID_A
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Description));
             }
-            PodcastsPlaylistsDataSet.AlbumDataTable dataTable = new PodcastsPlaylistsDataSet.AlbumDataTable();
+            PodcastDBDataSet.AlbumDataTable dataTable = new PodcastDBDataSet.AlbumDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2954,7 +2954,7 @@ SELECT ID_Album, Album_Name, Album_Description, Author_ID FROM Album WHERE (ID_A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.AlbumDataTable GetDataByName(string Searching_Name) {
+        public virtual PodcastDBDataSet.AlbumDataTable GetDataByName(string Searching_Name) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((Searching_Name == null)) {
                 throw new global::System.ArgumentNullException("Searching_Name");
@@ -2962,7 +2962,7 @@ SELECT ID_Album, Album_Name, Album_Description, Author_ID FROM Album WHERE (ID_A
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Name));
             }
-            PodcastsPlaylistsDataSet.AlbumDataTable dataTable = new PodcastsPlaylistsDataSet.AlbumDataTable();
+            PodcastDBDataSet.AlbumDataTable dataTable = new PodcastDBDataSet.AlbumDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -2970,14 +2970,14 @@ SELECT ID_Album, Album_Name, Album_Description, Author_ID FROM Album WHERE (ID_A
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PodcastsPlaylistsDataSet.AlbumDataTable dataTable) {
+        public virtual int Update(PodcastDBDataSet.AlbumDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PodcastsPlaylistsDataSet dataSet) {
+        public virtual int Update(PodcastDBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Album");
         }
         
@@ -3315,7 +3315,7 @@ SELECT ID_AlbumsPodcasts, Album_ID, Podcast_ID FROM AlbumsPodcasts WHERE (ID_Alb
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PodcastsPlaylistsDataSet.AlbumsPodcastsDataTable dataTable) {
+        public virtual int Fill(PodcastDBDataSet.AlbumsPodcastsDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3328,9 +3328,9 @@ SELECT ID_AlbumsPodcasts, Album_ID, Podcast_ID FROM AlbumsPodcasts WHERE (ID_Alb
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PodcastsPlaylistsDataSet.AlbumsPodcastsDataTable GetData() {
+        public virtual PodcastDBDataSet.AlbumsPodcastsDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PodcastsPlaylistsDataSet.AlbumsPodcastsDataTable dataTable = new PodcastsPlaylistsDataSet.AlbumsPodcastsDataTable();
+            PodcastDBDataSet.AlbumsPodcastsDataTable dataTable = new PodcastDBDataSet.AlbumsPodcastsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3339,10 +3339,10 @@ SELECT ID_AlbumsPodcasts, Album_ID, Podcast_ID FROM AlbumsPodcasts WHERE (ID_Alb
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.AlbumsPodcastsDataTable GetDataByAlbum(int Searching_Album) {
+        public virtual PodcastDBDataSet.AlbumsPodcastsDataTable GetDataByAlbum(int Searching_Album) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Searching_Album));
-            PodcastsPlaylistsDataSet.AlbumsPodcastsDataTable dataTable = new PodcastsPlaylistsDataSet.AlbumsPodcastsDataTable();
+            PodcastDBDataSet.AlbumsPodcastsDataTable dataTable = new PodcastDBDataSet.AlbumsPodcastsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3351,10 +3351,10 @@ SELECT ID_AlbumsPodcasts, Album_ID, Podcast_ID FROM AlbumsPodcasts WHERE (ID_Alb
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.AlbumsPodcastsDataTable GetDataByPodcast(int Searching_Podcast) {
+        public virtual PodcastDBDataSet.AlbumsPodcastsDataTable GetDataByPodcast(int Searching_Podcast) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Searching_Podcast));
-            PodcastsPlaylistsDataSet.AlbumsPodcastsDataTable dataTable = new PodcastsPlaylistsDataSet.AlbumsPodcastsDataTable();
+            PodcastDBDataSet.AlbumsPodcastsDataTable dataTable = new PodcastDBDataSet.AlbumsPodcastsDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3362,14 +3362,14 @@ SELECT ID_AlbumsPodcasts, Album_ID, Podcast_ID FROM AlbumsPodcasts WHERE (ID_Alb
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PodcastsPlaylistsDataSet.AlbumsPodcastsDataTable dataTable) {
+        public virtual int Update(PodcastDBDataSet.AlbumsPodcastsDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PodcastsPlaylistsDataSet dataSet) {
+        public virtual int Update(PodcastDBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "AlbumsPodcasts");
         }
         
@@ -3665,21 +3665,22 @@ SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nicknam
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nickname" +
-                ", Author_Age\r\nFROM     Author\r\nWHERE  (Author_Name LIKE @Searching_Name)";
+                ", Author_Age\r\nFROM     Author\r\nWHERE  (Author_Name LIKE \'%\'+@Searching_Name+\'%\')" +
+                "";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Author_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nickname" +
-                ", Author_Age\r\nFROM     Author\r\nWHERE  (Author_Nickname LIKE @Searching_Nickname)" +
-                "";
+                ", Author_Age\r\nFROM     Author\r\nWHERE  (Author_Nickname LIKE \'%\'+@Searching_Nickn" +
+                "ame+\'%\')";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Nickname", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Author_Nickname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[4].Connection = this.Connection;
             this._commandCollection[4].CommandText = "SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nickname" +
-                ", Author_Age\r\nFROM     Author\r\nWHERE  (Author_Patronymic LIKE @Searching_Patrony" +
-                "mic)";
+                ", Author_Age\r\nFROM     Author\r\nWHERE  (Author_Patronymic LIKE \'%\'+@Searching_Pat" +
+                "ronymic+\'%\')";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Patronymic", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Author_Patronymic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
@@ -3694,7 +3695,7 @@ SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nicknam
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PodcastsPlaylistsDataSet.AuthorDataTable dataTable) {
+        public virtual int Fill(PodcastDBDataSet.AuthorDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -3707,9 +3708,9 @@ SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nicknam
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PodcastsPlaylistsDataSet.AuthorDataTable GetData() {
+        public virtual PodcastDBDataSet.AuthorDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PodcastsPlaylistsDataSet.AuthorDataTable dataTable = new PodcastsPlaylistsDataSet.AuthorDataTable();
+            PodcastDBDataSet.AuthorDataTable dataTable = new PodcastDBDataSet.AuthorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3718,10 +3719,10 @@ SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nicknam
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.AuthorDataTable GetDataByAge(int SearchingAge) {
+        public virtual PodcastDBDataSet.AuthorDataTable GetDataByAge(int SearchingAge) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(SearchingAge));
-            PodcastsPlaylistsDataSet.AuthorDataTable dataTable = new PodcastsPlaylistsDataSet.AuthorDataTable();
+            PodcastDBDataSet.AuthorDataTable dataTable = new PodcastDBDataSet.AuthorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3730,7 +3731,7 @@ SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nicknam
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.AuthorDataTable GetDataByName(string Searching_Name) {
+        public virtual PodcastDBDataSet.AuthorDataTable GetDataByName(string Searching_Name) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((Searching_Name == null)) {
                 throw new global::System.ArgumentNullException("Searching_Name");
@@ -3738,7 +3739,7 @@ SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nicknam
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Name));
             }
-            PodcastsPlaylistsDataSet.AuthorDataTable dataTable = new PodcastsPlaylistsDataSet.AuthorDataTable();
+            PodcastDBDataSet.AuthorDataTable dataTable = new PodcastDBDataSet.AuthorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3747,7 +3748,7 @@ SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nicknam
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.AuthorDataTable GetDataByNickname(string Searching_Nickname) {
+        public virtual PodcastDBDataSet.AuthorDataTable GetDataByNickname(string Searching_Nickname) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((Searching_Nickname == null)) {
                 throw new global::System.ArgumentNullException("Searching_Nickname");
@@ -3755,7 +3756,7 @@ SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nicknam
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Nickname));
             }
-            PodcastsPlaylistsDataSet.AuthorDataTable dataTable = new PodcastsPlaylistsDataSet.AuthorDataTable();
+            PodcastDBDataSet.AuthorDataTable dataTable = new PodcastDBDataSet.AuthorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3764,7 +3765,7 @@ SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nicknam
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.AuthorDataTable GetDataByPatronymic(string Searching_Patronymic) {
+        public virtual PodcastDBDataSet.AuthorDataTable GetDataByPatronymic(string Searching_Patronymic) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             if ((Searching_Patronymic == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -3772,7 +3773,7 @@ SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nicknam
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Patronymic));
             }
-            PodcastsPlaylistsDataSet.AuthorDataTable dataTable = new PodcastsPlaylistsDataSet.AuthorDataTable();
+            PodcastDBDataSet.AuthorDataTable dataTable = new PodcastDBDataSet.AuthorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3781,7 +3782,7 @@ SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nicknam
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.AuthorDataTable GetDataBySurname(string Searching_Surname) {
+        public virtual PodcastDBDataSet.AuthorDataTable GetDataBySurname(string Searching_Surname) {
             this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((Searching_Surname == null)) {
                 throw new global::System.ArgumentNullException("Searching_Surname");
@@ -3789,7 +3790,7 @@ SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nicknam
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Surname));
             }
-            PodcastsPlaylistsDataSet.AuthorDataTable dataTable = new PodcastsPlaylistsDataSet.AuthorDataTable();
+            PodcastDBDataSet.AuthorDataTable dataTable = new PodcastDBDataSet.AuthorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -3797,14 +3798,14 @@ SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nicknam
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PodcastsPlaylistsDataSet.AuthorDataTable dataTable) {
+        public virtual int Update(PodcastDBDataSet.AuthorDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PodcastsPlaylistsDataSet dataSet) {
+        public virtual int Update(PodcastDBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Author");
         }
         
@@ -4185,7 +4186,8 @@ SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_
             this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[1].Connection = this.Connection;
             this._commandCollection[1].CommandText = "SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_I" +
-                "D\r\nFROM     Episode\r\nWHERE  (Episode_Description LIKE @Searching_Description)";
+                "D\r\nFROM     Episode\r\nWHERE  (Episode_Description LIKE \'%\'+@Searching_Description" +
+                "+\'%\')";
             this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Description", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "Episode_Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
@@ -4197,7 +4199,7 @@ SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_I" +
-                "D\r\nFROM     Episode\r\nWHERE  (Episode_Name LIKE @Searching_Name)";
+                "D\r\nFROM     Episode\r\nWHERE  (Episode_Name LIKE \'%\'+@Searching_Name+\'%\')";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Episode_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
@@ -4212,7 +4214,7 @@ SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PodcastsPlaylistsDataSet.EpisodeDataTable dataTable) {
+        public virtual int Fill(PodcastDBDataSet.EpisodeDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4225,9 +4227,9 @@ SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PodcastsPlaylistsDataSet.EpisodeDataTable GetData() {
+        public virtual PodcastDBDataSet.EpisodeDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PodcastsPlaylistsDataSet.EpisodeDataTable dataTable = new PodcastsPlaylistsDataSet.EpisodeDataTable();
+            PodcastDBDataSet.EpisodeDataTable dataTable = new PodcastDBDataSet.EpisodeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4236,7 +4238,7 @@ SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.EpisodeDataTable GetDataByDescription(string Searching_Description) {
+        public virtual PodcastDBDataSet.EpisodeDataTable GetDataByDescription(string Searching_Description) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             if ((Searching_Description == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -4244,7 +4246,7 @@ SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Description));
             }
-            PodcastsPlaylistsDataSet.EpisodeDataTable dataTable = new PodcastsPlaylistsDataSet.EpisodeDataTable();
+            PodcastDBDataSet.EpisodeDataTable dataTable = new PodcastDBDataSet.EpisodeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4253,10 +4255,10 @@ SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.EpisodeDataTable GetDataByDuration(decimal Searching_Duration) {
+        public virtual PodcastDBDataSet.EpisodeDataTable GetDataByDuration(decimal Searching_Duration) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             this.Adapter.SelectCommand.Parameters[0].Value = ((decimal)(Searching_Duration));
-            PodcastsPlaylistsDataSet.EpisodeDataTable dataTable = new PodcastsPlaylistsDataSet.EpisodeDataTable();
+            PodcastDBDataSet.EpisodeDataTable dataTable = new PodcastDBDataSet.EpisodeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4265,7 +4267,7 @@ SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.EpisodeDataTable GetDataByName(string Searching_Name) {
+        public virtual PodcastDBDataSet.EpisodeDataTable GetDataByName(string Searching_Name) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((Searching_Name == null)) {
                 throw new global::System.ArgumentNullException("Searching_Name");
@@ -4273,7 +4275,7 @@ SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Name));
             }
-            PodcastsPlaylistsDataSet.EpisodeDataTable dataTable = new PodcastsPlaylistsDataSet.EpisodeDataTable();
+            PodcastDBDataSet.EpisodeDataTable dataTable = new PodcastDBDataSet.EpisodeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4282,10 +4284,10 @@ SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.EpisodeDataTable GetDataByPodcast(int Searching_Podcast) {
+        public virtual PodcastDBDataSet.EpisodeDataTable GetDataByPodcast(int Searching_Podcast) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Searching_Podcast));
-            PodcastsPlaylistsDataSet.EpisodeDataTable dataTable = new PodcastsPlaylistsDataSet.EpisodeDataTable();
+            PodcastDBDataSet.EpisodeDataTable dataTable = new PodcastDBDataSet.EpisodeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4293,14 +4295,14 @@ SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PodcastsPlaylistsDataSet.EpisodeDataTable dataTable) {
+        public virtual int Update(PodcastDBDataSet.EpisodeDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PodcastsPlaylistsDataSet dataSet) {
+        public virtual int Update(PodcastDBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Episode");
         }
         
@@ -4639,13 +4641,13 @@ SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM Podcast WHE
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
             this._commandCollection[2].CommandText = "SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID\r\nFROM     Podcast" +
-                "\r\nWHERE  (Podcast_Description LIKE @Searching_Name)";
+                "\r\nWHERE  (Podcast_Description LIKE \'%\'+@Searching_Name+\'%\')";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Name", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "Podcast_Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID\r\nFROM     Podcast" +
-                "\r\nWHERE  (Podcast_Name LIKE @Searching_Name)";
+                "\r\nWHERE  (Podcast_Name LIKE \'%\'+@Searching_Name+\'%\')";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Podcast_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
@@ -4654,7 +4656,7 @@ SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM Podcast WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(PodcastsPlaylistsDataSet.PodcastDataTable dataTable) {
+        public virtual int Fill(PodcastDBDataSet.PodcastDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -4667,9 +4669,9 @@ SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM Podcast WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual PodcastsPlaylistsDataSet.PodcastDataTable GetData() {
+        public virtual PodcastDBDataSet.PodcastDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            PodcastsPlaylistsDataSet.PodcastDataTable dataTable = new PodcastsPlaylistsDataSet.PodcastDataTable();
+            PodcastDBDataSet.PodcastDataTable dataTable = new PodcastDBDataSet.PodcastDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4678,10 +4680,10 @@ SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM Podcast WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.PodcastDataTable GetDataByAuthor(int Searching_Author) {
+        public virtual PodcastDBDataSet.PodcastDataTable GetDataByAuthor(int Searching_Author) {
             this.Adapter.SelectCommand = this.CommandCollection[1];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Searching_Author));
-            PodcastsPlaylistsDataSet.PodcastDataTable dataTable = new PodcastsPlaylistsDataSet.PodcastDataTable();
+            PodcastDBDataSet.PodcastDataTable dataTable = new PodcastDBDataSet.PodcastDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4690,7 +4692,7 @@ SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM Podcast WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.PodcastDataTable GetDataByDescription(string Searching_Name) {
+        public virtual PodcastDBDataSet.PodcastDataTable GetDataByDescription(string Searching_Name) {
             this.Adapter.SelectCommand = this.CommandCollection[2];
             if ((Searching_Name == null)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
@@ -4698,7 +4700,7 @@ SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM Podcast WHE
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Name));
             }
-            PodcastsPlaylistsDataSet.PodcastDataTable dataTable = new PodcastsPlaylistsDataSet.PodcastDataTable();
+            PodcastDBDataSet.PodcastDataTable dataTable = new PodcastDBDataSet.PodcastDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4707,7 +4709,7 @@ SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM Podcast WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
-        public virtual PodcastsPlaylistsDataSet.PodcastDataTable GetDataByName(string Searching_Name) {
+        public virtual PodcastDBDataSet.PodcastDataTable GetDataByName(string Searching_Name) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
             if ((Searching_Name == null)) {
                 throw new global::System.ArgumentNullException("Searching_Name");
@@ -4715,7 +4717,7 @@ SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM Podcast WHE
             else {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Name));
             }
-            PodcastsPlaylistsDataSet.PodcastDataTable dataTable = new PodcastsPlaylistsDataSet.PodcastDataTable();
+            PodcastDBDataSet.PodcastDataTable dataTable = new PodcastDBDataSet.PodcastDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -4723,14 +4725,14 @@ SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM Podcast WHE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PodcastsPlaylistsDataSet.PodcastDataTable dataTable) {
+        public virtual int Update(PodcastDBDataSet.PodcastDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(PodcastsPlaylistsDataSet dataSet) {
+        public virtual int Update(PodcastDBDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Podcast");
         }
         
@@ -5063,7 +5065,7 @@ SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM Podcast WHE
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateUpdatedRows(PodcastsPlaylistsDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(PodcastDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._authorTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Author.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -5118,7 +5120,7 @@ SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM Podcast WHE
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateInsertedRows(PodcastsPlaylistsDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(PodcastDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._authorTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Author.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -5168,7 +5170,7 @@ SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM Podcast WHE
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        private int UpdateDeletedRows(PodcastsPlaylistsDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(PodcastDBDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._episodeTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Episode.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -5242,7 +5244,7 @@ SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM Podcast WHE
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-        public virtual int UpdateAll(PodcastsPlaylistsDataSet dataSet) {
+        public virtual int UpdateAll(PodcastDBDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

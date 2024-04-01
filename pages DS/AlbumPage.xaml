@@ -16,19 +16,7 @@
             <ColumnDefinition Width="1.75*"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <Menu Grid.ColumnSpan="2">
-            <MenuItem Header="Delete Podcast" Click="onDeleteAlbum_Click">
-                <MenuItem.Icon>
-                    <Image Source="\Icons\cross_icon.png"/>
-                </MenuItem.Icon>
-            </MenuItem>
-            <MenuItem Header="Add new Podcast" Click="MenuItem_Click">
-                <MenuItem.Icon>
-                    <Image Source="\Icons\add.png"/>
-                </MenuItem.Icon>
-            </MenuItem>
-        </Menu>
-        <DataGrid Grid.Row="1" Name="AlbumsDGr" Margin="8" SelectionChanged="onSelectedAlbumChanged"/>
+        <DataGrid Grid.Row="1" Name="AlbumsDGr" Margin="8" />
         <Grid Grid.Column="1" Grid.Row="1">
             <Grid.RowDefinitions>
                 <RowDefinition/>
@@ -43,15 +31,15 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.ColumnSpan="2" Padding="8" Text="Album info" HorizontalAlignment="Center" FontSize="20" FontFamily="Sans" FontWeight="Bold"/>
             <TextBlock Grid.Row="1" Text="Name:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center"/>
-            <TextBox Name="NameInput" Grid.Column="1" Grid.Row="1" Margin="8" FontSize="16" FontFamily="Sans"/>
+            <TextBox TextChanged="OnSorting_Changed" Name="NameInput" Grid.Column="1" Grid.Row="1" Margin="8" FontSize="16" FontFamily="Sans"/>
 
             <TextBlock Grid.Row="2" Text="Description:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
-            <TextBox Name="DescriptionInput" Grid.Column="1" Grid.Row="2" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+            <TextBox TextChanged="OnSorting_Changed" Name="DescriptionInput" Grid.Column="1" Grid.Row="2" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
 
             <TextBlock Grid.Row="3" Text="Author ID:" FontSize="16" FontFamily="Sans" Padding="8"  TextAlignment="Center"/>
-            <ComboBox Name="AuthorID_Selection" Grid.Column="1" Grid.Row="3" Margin="8" ItemTemplate="{StaticResource ResourceKey=AuthorComboBoxDataTemplate}"/>
+            <ComboBox SelectionChanged="OnSelectedAuthor_Changed" Name="AuthorID_Selection" Grid.Column="1" Grid.Row="3" Margin="8" ItemTemplate="{StaticResource ResourceKey=AuthorComboBoxDataTemplate}"/>
 
-            <Button Content="Save changes" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="8" Click="OnSaveChanges_Click"/>
+            <Button Content="Clear filter" Click="OnClearFilter_Click" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="8" />
         </Grid>
     </Grid>
 </Page>

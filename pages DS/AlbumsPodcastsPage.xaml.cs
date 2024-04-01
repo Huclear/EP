@@ -34,83 +34,24 @@ namespace Practice4.pages_DS
             AlbumsPodcastsDGr.ItemsSource = dbViewModel.AlbumsPodcasts.GetData();
         }
 
-        private void onDeleteAlbumPodcasts(object sender, RoutedEventArgs e)
+        private void OnSelectedSortingItem_Changed(object sender, SelectionChangedEventArgs e)
         {
-            if (AlbumsPodcastsDGr.SelectedItem != null && AlbumsPodcastsDGr.SelectedItem is DataRowView albumPodcast)
+            if(sender != null &&
+                sender is ComboBox selection)
             {
-                try
+                if(selection.SelectedItem != null)
                 {
-                    var id = Convert.ToInt32(albumPodcast[0]);
-                    dbViewModel.DeleteFrom(Tables.Author, id);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                finally
-                {
-                    AlbumsPodcastsDGr.ItemsSource = dbViewModel.AlbumsPodcasts.GetData();
+                    if (selection.Name.ToLower().Contains("podcast"))
+                        AlbumsPodcastsDGr.ItemsSource = dbViewModel.AlbumsPodcasts.GetDataByPodcast((selection.SelectedItem as PodcastDBDataSet.PodcastRow).ID_Podcast);
+                    else if (selection.Name.ToLower().Contains("album"))
+                        AlbumsPodcastsDGr.ItemsSource = dbViewModel.AlbumsPodcasts.GetDataByAlbum((selection.SelectedItem as PodcastDBDataSet.AlbumRow).ID_Album);
                 }
             }
         }
 
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        private void OnClearFilter_Click(object sender, RoutedEventArgs e)
         {
-            if (AlbumID_Selection.SelectedItem != null && AlbumID_Selection.SelectedItem is PodcastDBDataSet.AlbumRow album
-                && PodcastID_Selection.SelectedItem != null && PodcastID_Selection.SelectedItem is PodcastDBDataSet.PodcastRow podcast)
-            {
-                try
-                {
-                    dbViewModel.AddAlbumsPodcasts(album.ID_Album, podcast.ID_Podcast);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                finally
-                {
-                    AlbumsPodcastsDGr.ItemsSource = dbViewModel.AlbumsPodcasts.GetData();
-                }
-            }
-        }
-
-        private void OnSaveChanges_Click(object sender, RoutedEventArgs e)
-        {
-            if (AlbumsPodcastsDGr.SelectedItem != null && AlbumsPodcastsDGr.SelectedItem is DataRowView albumPodcast
-                && AlbumID_Selection.SelectedItem != null && AlbumID_Selection.SelectedItem is PodcastDBDataSet.AlbumRow album
-                && PodcastID_Selection.SelectedItem != null && PodcastID_Selection.SelectedItem is PodcastDBDataSet.PodcastRow podcast)
-            {
-                try
-                {
-                    var id = Convert.ToInt32(albumPodcast[0]);
-                    dbViewModel.UpdateAlbumsPodcasts(album.ID_Album, podcast.ID_Podcast, id);
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-                finally
-                {
-                    AlbumsPodcastsDGr.ItemsSource = dbViewModel.AlbumsPodcasts.GetData();
-                }
-            }
-        }
-
-        private void onSelectedAlbumPodcast_Changed(object sender, SelectionChangedEventArgs e)
-        {
-            if (AlbumsPodcastsDGr.SelectedItem != null && AlbumsPodcastsDGr.SelectedItem is DataRowView albumPodcast)
-            {
-                try
-                {
-                    AlbumID_Selection.SelectedItem = (AlbumID_Selection.ItemsSource as List<PodcastDBDataSet.AlbumRow>).FirstOrDefault(row => row.ID_Album == Convert.ToInt32(albumPodcast[1]));
-                    PodcastID_Selection.SelectedItem = (PodcastID_Selection.ItemsSource as List<PodcastDBDataSet.PodcastRow>).FirstOrDefault(row => row.ID_Podcast == Convert.ToInt32(albumPodcast[1]));
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-                }
-
-            }
+            AlbumID_Selection.SelectedItem = PodcastID_Selection.SelectedItem = null;
         }
     }
 }

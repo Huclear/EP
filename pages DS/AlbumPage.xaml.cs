@@ -32,86 +32,34 @@ namespace Practice4.pages_DS
             AlbumsDGr.ItemsSource = dbViewModel.Albums.GetData();
         }
 
-        private void onSelectedAlbumChanged(object sender, SelectionChangedEventArgs e)
+        private void OnSorting_Changed(object sender, TextChangedEventArgs e)
         {
-            try
+            if (sender is TextBox txt)
             {
-                if (AlbumsDGr.SelectedItem != null && AlbumsDGr.SelectedItem is DataRowView album)
+                if (txt.Text != string.Empty)
                 {
-                    NameInput.Text = album[1] as string;
-                    DescriptionInput.Text = album[2] as string;
-                    AuthorID_Selection.SelectedItem = (AuthorID_Selection.ItemsSource as List<PodcastDBDataSet.AuthorRow>).FirstOrDefault(row => row.ID_Author == Convert.ToInt32(album[3]));
+                    if (txt.Name.ToLower().Contains("name"))
+                        AlbumsDGr.ItemsSource = dbViewModel.Albums.GetDataByName(txt.Text);
+                    else if (txt.Name.ToLower().Contains("description"))
+                        AlbumsDGr.ItemsSource = dbViewModel.Albums.GetDataByDescription(txt.Text);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            finally
-            {
-                AlbumsDGr.ItemsSource = dbViewModel.Podcasts.GetData();
             }
         }
 
-        private void OnSaveChanges_Click(object sender, RoutedEventArgs e)
+        private void OnSelectedAuthor_Changed(object sender, SelectionChangedEventArgs e)
         {
-            try
-            {
-                if (AlbumsDGr.SelectedItem != null && AlbumsDGr.SelectedItem is DataRowView album
-                    && AuthorID_Selection.SelectedItem != null && AuthorID_Selection.SelectedItem is PodcastDBDataSet.AuthorRow author)
-                {
-                    var id = Convert.ToInt32(album[0]);
-                    dbViewModel.UpdateAlbum(NameInput.Text, DescriptionInput.Text, author.ID_Author, id);
-                }
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            finally
-            {
+            if (AuthorID_Selection.SelectedItem != null && AuthorID_Selection.SelectedItem is PodcastDBDataSet.AuthorRow author)
+                AlbumsDGr.ItemsSource = dbViewModel.Albums.GetDataByAuthor(author.ID_Author);
+            else
                 AlbumsDGr.ItemsSource = dbViewModel.Albums.GetData();
-            }
         }
 
-        private void onDeleteAlbum_Click(object sender, RoutedEventArgs e)
+        private void OnClearFilter_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                if (AlbumsDGr.SelectedItem != null && AlbumsDGr.SelectedItem is DataRowView album)
-                {
-                    var id = Convert.ToInt32(album[0]);
-                    dbViewModel.DeleteFrom(Tables.Album, id);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            finally
-            {
-                AlbumsDGr.ItemsSource = dbViewModel.Albums.GetData();
-            }
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                if (AuthorID_Selection.SelectedItem != null && AuthorID_Selection.SelectedItem is PodcastDBDataSet.AuthorRow author)
-                {
-                    dbViewModel.AddAlbum(NameInput.Text, DescriptionInput.Text, author.ID_Author);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            finally
-            {
-                AlbumsDGr.ItemsSource = dbViewModel.Albums.GetData();
-            }
+            NameInput.Text = string.Empty;
+            DescriptionInput.Text = string.Empty;
+            AuthorID_Selection.SelectedItem = null;
+            AlbumsDGr.ItemsSource = dbViewModel.Albums.GetData();
         }
     }
 }

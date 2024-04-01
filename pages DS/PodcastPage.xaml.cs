@@ -33,84 +33,33 @@ namespace Practice4.pages_DS
             PodcastsDGr.ItemsSource = dbViewModel.Podcasts.GetData();
         }
 
-        private void OnSaveChanges_Click(object sender, RoutedEventArgs e)
+        private void ClearFilter_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-                if(PodcastsDGr.SelectedItem != null && PodcastsDGr.SelectedItem is DataRowView podcast
-                    && AuthorID_Selection.SelectedItem != null && AuthorID_Selection.SelectedItem is PodcastDBDataSet.AuthorRow author)
-                {
-                    var id = Convert.ToInt32(podcast[0]);
-                    dbViewModel.UpdatePodcast(NameInput.Text, DescriptionInput.Text, author.ID_Author, id);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            finally
-            {
-                PodcastsDGr.ItemsSource = dbViewModel.Podcasts.GetData();
-            }
+            NameInput.Text = string.Empty;
+            DescriptionInput.Text = string.Empty;
+            AuthorID_Selection.SelectedItem = null;
+            PodcastsDGr.ItemsSource = dbViewModel.Podcasts.GetData();
         }
 
-        private void onSelectedPodcast_Changed(object sender, SelectionChangedEventArgs e)
+        private void OnSelectedAuthor_Changed(object sender, SelectionChangedEventArgs e)
         {
-            try
-            {
-                if (PodcastsDGr.SelectedItem != null && PodcastsDGr.SelectedItem is DataRowView podcast)
-                {
-                    NameInput.Text = podcast[1] as string;
-                    DescriptionInput.Text = podcast[2] as string;
-                    AuthorID_Selection.SelectedItem = (AuthorID_Selection.ItemsSource as List<PodcastDBDataSet.AuthorRow>).FirstOrDefault(row => row.ID_Author == Convert.ToInt32(podcast[3]));
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            finally
-            {
+            if (AuthorID_Selection.SelectedItem != null && AuthorID_Selection.SelectedItem is PodcastDBDataSet.AuthorRow author)
+                PodcastsDGr.ItemsSource = dbViewModel.Podcasts.GetDataByAuthor(author.ID_Author);
+            else
                 PodcastsDGr.ItemsSource = dbViewModel.Podcasts.GetData();
-            }
         }
 
-        private void onDeletePodcast_Click(object sender, RoutedEventArgs e)
+        private void OnSortingString_Changed(object sender, TextChangedEventArgs e)
         {
-            try
+            if(sender is TextBox txt)
             {
-                if (PodcastsDGr.SelectedItem != null && PodcastsDGr.SelectedItem is DataRowView podcast)
+                if (txt.Text != string.Empty)
                 {
-                    var id = Convert.ToInt32(podcast[0]);
-                    dbViewModel.DeleteFrom(Tables.Podcast, id);
+                    if (txt.Name.ToLower().Contains("name"))
+                        PodcastsDGr.ItemsSource = dbViewModel.Podcasts.GetDataByName(txt.Text);
+                    else if (txt.Name.ToLower().Contains("description"))
+                        PodcastsDGr.ItemsSource = dbViewModel.Podcasts.GetDataByDescription(txt.Text);
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            finally
-            {
-                PodcastsDGr.ItemsSource = dbViewModel.Podcasts.GetData();
-            }
-        }
-
-        private void MenuItem_Click(object sender, RoutedEventArgs e)
-        {
-            try
-            {
-                if (AuthorID_Selection.SelectedItem != null && AuthorID_Selection.SelectedItem is PodcastDBDataSet.AuthorRow author)
-                {
-                    dbViewModel.AddPodcast(NameInput.Text, DescriptionInput.Text, author.ID_Author);
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
-            finally
-            {
-                PodcastsDGr.ItemsSource = dbViewModel.Podcasts.GetData();
             }
         }
     }

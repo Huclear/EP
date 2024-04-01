@@ -6,30 +6,18 @@
       xmlns:local="clr-namespace:Practice4.pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PodcastsAlbumsPage" Background="White" DataContext="{Binding RelativeSource={RelativeSource Self}, Path=podcastsVM}">
+      Title="PodcastsAlbumsPage" Background="White" DataContext="{Binding RelativeSource={RelativeSource Self}, Path=albumsPodcastsVM}">
       <Grid>
       <Grid.RowDefinitions>
           <RowDefinition Height="Auto"/>
           <RowDefinition/>
       </Grid.RowDefinitions>
-      <Grid.ColumnDefinitions>
-          <ColumnDefinition Width="1.75*"/>
-          <ColumnDefinition/>
-      </Grid.ColumnDefinitions>
-      <Menu Grid.ColumnSpan="2">
-            <MenuItem Header="Delete Album/Podcast" Command="{Binding deleteAlbums_PodcastsCommand}" CommandParameter="{Binding ElementName=AlbumsPodcastsDGr, Path=SelectedItem}">
-              <MenuItem.Icon>
-                  <Image Source="\Icons\cross_icon.png"/>
-              </MenuItem.Icon>
-          </MenuItem>
-          <MenuItem Header="Add new Album/Podcast" Click="MenuItem_Click">
-              <MenuItem.Icon>
-                  <Image Source="\Icons\add.png"/>
-              </MenuItem.Icon>
-          </MenuItem>
-      </Menu>
-      <DataGrid Grid.Row="1" Name="AlbumsPodcastsDGr" Margin="8" ItemsSource="{Binding Albums_Podcasts}"/>
-        <Grid Grid.Column="1" Grid.Row="1" DataContext="{Binding ElementName=AlbumsPodcastsDGr, Path=SelectedItem}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1.75*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid Grid.Row="1" Name="AlbumsPodcastsDGr" Margin="8" ItemsSource="{Binding AlbumsPodcasts}"/>
+        <Grid Grid.Column="1" Grid.Row="1">
           <Grid.RowDefinitions>
               <RowDefinition/>
               <RowDefinition/>
@@ -37,18 +25,21 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
           <Grid.ColumnDefinitions>
+              <ColumnDefinition Width="Auto"/>
               <ColumnDefinition/>
               <ColumnDefinition/>
           </Grid.ColumnDefinitions>
-            <TextBlock Grid.ColumnSpan="2" Padding="8" Text="Album/Pocast info" HorizontalAlignment="Center" FontSize="20" FontFamily="Sans" FontWeight="Bold"/>
-          
-            <TextBlock Grid.Row="1" Text="Podcast ID:" FontSize="16" FontFamily="Sans" Padding="8"  TextAlignment="Center"/>
-            <ComboBox Name="PodcastID_Selection" Grid.Column="1" Grid.Row="1" SelectedItem="{Binding Podcast}" ItemsSource="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}, Path=DataContext.Podcasts}" Margin="8"/>
+            <TextBlock Grid.ColumnSpan="3" Padding="8" Text="Album/Pocast info" HorizontalAlignment="Center" FontSize="20" FontFamily="Sans" FontWeight="Bold"/>
 
-            <TextBlock Grid.Row="2" Text="Album ID:" FontSize="16" FontFamily="Sans" Padding="8"  TextAlignment="Center"/>
-            <ComboBox Name="AlbumID_Selection" Grid.Column="1" Grid.Row="2" SelectedItem="{Binding Album}" ItemsSource="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}, Path=DataContext.Albums}" Margin="8"/>
+            <CheckBox Name="PodcastSortEnable" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnablePodcastSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="Podcast ID:" FontSize="16" FontFamily="Sans" Padding="8"  TextAlignment="Center"/>
+            <ComboBox Name="PodcastID_Selection" Grid.Column="2" Grid.Row="1" SelectedItem="{Binding CurrentPodcastSorting}" ItemsSource="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}, Path=DataContext.Podcasts}" Margin="8"/>
+
+            <CheckBox Name="AlbumSortEnable" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableAlbumSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
+            <TextBlock Grid.Column="1" Grid.Row="2" Text="Album ID:" FontSize="16" FontFamily="Sans" Padding="8"  TextAlignment="Center"/>
+            <ComboBox Name="AlbumID_Selection" Grid.Column="2" Grid.Row="2" SelectedItem="{Binding CurrentAlbumSorting}" ItemsSource="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}, Path=DataContext.Albums}" Margin="8"/>
           
-            <Button Content="Save changes" Grid.Row="4" Grid.ColumnSpan="2" VerticalAlignment="Center" Margin="8" Click="OnSaveChanges_Click"/>
+            <Button Content="Clear filters" Grid.Row="4" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="8" Command="{Binding clearFilterCommand}" CommandParameter="{Binding ElementName=AlbumsPodcastsDGr, Path=ItemsSource}" Click="Button_Click"/>
       </Grid>
   </Grid>
 </Page>

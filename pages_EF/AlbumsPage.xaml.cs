@@ -27,5 +27,10 @@ namespace Practice4.pages
             albumsVM = new AlbumPageVM();
             InitializeComponent();
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            NameSortEnable.IsChecked = DescriptionSortEnable.IsChecked = AuthorSortEnable.IsChecked = false;
+        }
     }
 }
