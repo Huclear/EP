@@ -5,9 +5,8 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:Practice4.pages"
       xmlns:rules="clr-namespace:Practice4.Rules"
-      mc:Ignorable="d" 
-      d:DesignHeight="450" d:DesignWidth="800"
-      Title="AuthorPage" Background="White" DataContext="{Binding RelativeSource={RelativeSource Self},Path=authorsVM}">
+      mc:Ignorable="d" d:DesignWidth="800"
+      Title="AuthorPage" Background="White" DataContext="{Binding RelativeSource={RelativeSource Self},Path=authorsVM}" MinHeight="550">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
@@ -37,19 +36,47 @@
 
             <CheckBox Name="NameSortEnable" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableNameSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
             <TextBlock Grid.Column="1" Grid.Row="1" Text="Name:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center"/>
-            <TextBox Text="{Binding Path=CurrentNameSorting, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" Grid.Row="1" Margin="8" FontSize="16" FontFamily="Sans"/>
+            <Grid Grid.Column="2" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBox Text="{Binding Path=CurrentNameSorting, UpdateSourceTrigger=PropertyChanged}" Margin="8" FontSize="16" FontFamily="Sans"/>
+                <ComboBox Name="NameSelection" SelectionChanged="OnSelectedFilter_Changed" SelectedItem="{Binding CurrentNameFilter}" Grid.Row="1"/>
+            </Grid>
 
             <CheckBox Name="SurnameSortEnable" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableSurnameSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
             <TextBlock Grid.Column="1" Grid.Row="2" Text="Surname:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
-            <TextBox Text="{Binding Path=CurrentSurnameSorting, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" Grid.Row="2" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+            <Grid Grid.Column="2" Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBox Text="{Binding Path=CurrentSurnameSorting, UpdateSourceTrigger=PropertyChanged}" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+                <ComboBox Name="SurnameSelection" SelectionChanged="OnSelectedFilter_Changed" SelectedItem="{Binding CurrentSurnameFilter}" Grid.Row="1"/>
+            </Grid>
 
             <CheckBox Name="PatronymicSortEnable" Grid.Row="3" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnablePatronymicSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
             <TextBlock Grid.Column="1" Grid.Row="3" Text="Patronymic:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
-            <TextBox Text="{Binding Path=CurrentPatronymicSorting, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" Grid.Row="3" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+            <Grid Grid.Column="2" Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBox Text="{Binding Path=CurrentPatronymicSorting, UpdateSourceTrigger=PropertyChanged}" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+                <ComboBox Name="PatronymicSelection" SelectionChanged="OnSelectedFilter_Changed" SelectedItem="{Binding CurrentPatronymicFilter}" Grid.Row="1"/>
+            </Grid>
 
             <CheckBox Name="NicknameSortEnable" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableNicknameSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
             <TextBlock Grid.Column="1" Grid.Row="4" Text="Nickname:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
-            <TextBox Text="{Binding Path=CurrentNicknameSorting, UpdateSourceTrigger=PropertyChanged}" Grid.Column="2" Grid.Row="4" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+            <Grid Grid.Column="2" Grid.Row="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBox Text="{Binding Path=CurrentNicknameSorting, UpdateSourceTrigger=PropertyChanged}" Margin="8,8,8,8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+                <ComboBox Name="NicknameSelection" SelectionChanged="OnSelectedFilter_Changed" SelectedItem="{Binding CurrentNicknameFilter}" Grid.Row="1"/>
+            </Grid>
 
             <CheckBox Name="AgeSortEnable" Grid.Row="5" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableAgeSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
             <TextBlock Grid.Column="1" Text="Age:" Grid.Row="5" FontSize="16" FontFamily="Sans" Padding="8"  TextAlignment="Center"/>
@@ -63,7 +90,7 @@
                     </Binding>
                 </TextBox.Text>
             </TextBox>
-            
+
             <Button Content="Clear fiters" Grid.Row="6" Grid.ColumnSpan="3" VerticalAlignment="Center" Margin="8" Command="{Binding clearAuthorsFilterCommand}" CommandParameter="{Binding ElementName=AuthorsDGr, Path=ItemsSource}" Click="Button_Click"/>
         </Grid>
     </Grid>

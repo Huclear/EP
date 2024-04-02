@@ -30,6 +30,9 @@ namespace Practice4.pages_DS
             InitializeComponent();
             AuthorID_Selection.ItemsSource = dbViewModel.Authors.GetData().ToList();
             AlbumsDGr.ItemsSource = dbViewModel.Albums.GetData();
+
+            NameSelection.ItemsSource = dbViewModel.Albums.GetData().ToList();
+            DescriptionSelection.ItemsSource = dbViewModel.GetAlbumsDescriptionEntries().ToList();
         }
 
         private void OnSorting_Changed(object sender, TextChangedEventArgs e)
@@ -60,6 +63,20 @@ namespace Practice4.pages_DS
             DescriptionInput.Text = string.Empty;
             AuthorID_Selection.SelectedItem = null;
             AlbumsDGr.ItemsSource = dbViewModel.Albums.GetData();
+        }
+
+        private void OnSelectedFilter_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            if (sender is ComboBox cb)
+            {
+                if (cb.SelectedItem != null)
+                {
+                    if (cb.Name.ToLower().Contains("name"))
+                        AlbumsDGr.ItemsSource = dbViewModel.Albums.SearchByName((cb.SelectedItem as PodcastDBDataSet.AlbumRow).Album_Name);
+                    else if (cb.Name.ToLower().Contains("description"))
+                        AlbumsDGr.ItemsSource = dbViewModel.Albums.SearchByDescription((cb.SelectedItem as PodcastDBDataSet.AlbumRow).Album_Description);
+                }
+            }
         }
     }
 }

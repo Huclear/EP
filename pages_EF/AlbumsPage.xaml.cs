@@ -26,11 +26,27 @@ namespace Practice4.pages
         {
             albumsVM = new AlbumPageVM();
             InitializeComponent();
+            NameSelection.ItemsSource = albumsVM.GetNameEntries();
+            DescriptionSelection.ItemsSource = albumsVM.GetDescriptionEntries();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NameSortEnable.IsChecked = DescriptionSortEnable.IsChecked = AuthorSortEnable.IsChecked = false;
+        }
+
+        private void OnSelectedFilter_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            if (sender is ComboBox cb)
+            {
+                if (cb.SelectedItem != null)
+                {
+                    if (cb.Name.ToLower().Contains("name"))
+                        albumsVM.FilterByName();
+                    else if (cb.Name.ToLower().Contains("description"))
+                        albumsVM.FilterByDescription();
+                }
+            }
         }
     }
 }

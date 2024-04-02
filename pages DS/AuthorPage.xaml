@@ -7,7 +7,7 @@
       xmlns:rules="clr-namespace:Practice4.Rules"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AuthorPage" Background="White">
+      Title="AuthorPage" Background="White" MinHeight="500">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="1.75*"/>
@@ -31,16 +31,44 @@
             <TextBlock Grid.ColumnSpan="2" Padding="8" Text="Author info" HorizontalAlignment="Center" FontSize="20" FontFamily="Sans" FontWeight="Bold"/>
 
             <TextBlock Grid.Row="1" Text="Name:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center"/>
-            <TextBox TextChanged="OnSortingString_Changed" Name="NameInput" Grid.Column="1" Grid.Row="1" Margin="8" FontSize="16" FontFamily="Sans"/>
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBox TextChanged="OnSortingString_Changed" Name="NameInput"  Margin="8" FontSize="16" FontFamily="Sans"/>
+                <ComboBox Name="NameSelection" SelectionChanged="OnSelectedFilter_Changed" Grid.Row="1" DisplayMemberPath="Author_Name"/>
+            </Grid>
 
             <TextBlock Grid.Row="2" Text="Surname:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
-            <TextBox TextChanged="OnSortingString_Changed" Name="SurnameInput" Grid.Column="1" Grid.Row="2" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+            <Grid Grid.Column="1" Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBox TextChanged="OnSortingString_Changed" Name="SurnameInput" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+                <ComboBox Name="SurnameSelection" SelectionChanged="OnSelectedFilter_Changed" Grid.Row="1" DisplayMemberPath="Author_SurName"/>
+            </Grid>
 
             <TextBlock Grid.Row="3" Text="Patronymic:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
-            <TextBox TextChanged="OnSortingString_Changed" Name="PatronymicInput" Grid.Column="1" Grid.Row="3" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+            <Grid Grid.Column="1" Grid.Row="3">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBox TextChanged="OnSortingString_Changed" Name="PatronymicInput" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+                <ComboBox Name="PatronymicSelection" SelectionChanged="OnSelectedFilter_Changed" Grid.Row="1" DisplayMemberPath="Author_Patronymic"/>
+            </Grid>
 
             <TextBlock Grid.Row="4" Text="Nickname:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
-            <TextBox TextChanged="OnSortingString_Changed" Name="NicknameInput" Grid.Column="1" Grid.Row="4" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+            <Grid Grid.Column="1" Grid.Row="4">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBox TextChanged="OnSortingString_Changed" Name="NicknameInput" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+                <ComboBox Name="NicknameSelection" SelectionChanged="OnSelectedFilter_Changed" Grid.Row="1" DisplayMemberPath="Author_Nickname"/>
+            </Grid>
 
 
             <TextBlock Text="Age:" Grid.Row="5" FontSize="16" FontFamily="Sans" Padding="8"  TextAlignment="Center"/>

@@ -2872,7 +2872,7 @@ SELECT ID_Album, Album_Name, Album_Description, Author_ID FROM Album WHERE (ID_A
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_Album, Album_Name, Album_Description, Author_ID FROM dbo.Album";
@@ -2895,6 +2895,18 @@ SELECT ID_Album, Album_Name, Album_Description, Author_ID FROM Album WHERE (ID_A
                 " (Album_Name LIKE \'%\'+@Searching_Name+\'%\')";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Album_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT ID_Album, Album_Name, Album_Description, Author_ID FROM dbo.Album\r\nWHERE A" +
+                "lbum_Description= @Searching_Description";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Description", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "Album_Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT ID_Album, Album_Name, Album_Description, Author_ID FROM dbo.Album\r\nWHERE A" +
+                "lbum_Name = @Searching_Name";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Album_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2956,6 +2968,40 @@ SELECT ID_Album, Album_Name, Album_Description, Author_ID FROM Album WHERE (ID_A
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual PodcastDBDataSet.AlbumDataTable GetDataByName(string Searching_Name) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((Searching_Name == null)) {
+                throw new global::System.ArgumentNullException("Searching_Name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Name));
+            }
+            PodcastDBDataSet.AlbumDataTable dataTable = new PodcastDBDataSet.AlbumDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual PodcastDBDataSet.AlbumDataTable SearchByDescription(string Searching_Description) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((Searching_Description == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Description));
+            }
+            PodcastDBDataSet.AlbumDataTable dataTable = new PodcastDBDataSet.AlbumDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual PodcastDBDataSet.AlbumDataTable SearchByName(string Searching_Name) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((Searching_Name == null)) {
                 throw new global::System.ArgumentNullException("Searching_Name");
             }
@@ -3650,7 +3696,7 @@ SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nicknam
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[10];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nickname" +
@@ -3689,6 +3735,31 @@ SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nicknam
                 ", Author_Age\r\nFROM     Author\r\nWHERE  (Author_SurName LIKE @Searching_Surname)";
             this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Surname", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Author_SurName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nickname" +
+                ", Author_Age\r\nFROM     Author\r\nWHERE  (Author_Name = @Searching_Name)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Author_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[7].Connection = this.Connection;
+            this._commandCollection[7].CommandText = "SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nickname" +
+                ", Author_Age\r\nFROM     Author\r\nWHERE  (Author_Nickname = @Searching_Nickname)";
+            this._commandCollection[7].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[7].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Nickname", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Author_Nickname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[8] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[8].Connection = this.Connection;
+            this._commandCollection[8].CommandText = "SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nickname" +
+                ", Author_Age\r\nFROM     Author\r\nWHERE  (Author_Patronymic = @Searching_Patronymic" +
+                ")";
+            this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Patronymic", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Author_Patronymic", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[9].Connection = this.Connection;
+            this._commandCollection[9].CommandText = "SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nickname" +
+                ", Author_Age\r\nFROM     Author\r\nWHERE  (Author_SurName = @Searching_Surname)";
+            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Surname", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Author_SurName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -3784,6 +3855,74 @@ SELECT ID_Author, Author_Name, Author_SurName, Author_Patronymic, Author_Nicknam
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual PodcastDBDataSet.AuthorDataTable GetDataBySurname(string Searching_Surname) {
             this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((Searching_Surname == null)) {
+                throw new global::System.ArgumentNullException("Searching_Surname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Surname));
+            }
+            PodcastDBDataSet.AuthorDataTable dataTable = new PodcastDBDataSet.AuthorDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual PodcastDBDataSet.AuthorDataTable SearchByName(string Searching_Name) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((Searching_Name == null)) {
+                throw new global::System.ArgumentNullException("Searching_Name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Name));
+            }
+            PodcastDBDataSet.AuthorDataTable dataTable = new PodcastDBDataSet.AuthorDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual PodcastDBDataSet.AuthorDataTable SearchByNickname(string Searching_Nickname) {
+            this.Adapter.SelectCommand = this.CommandCollection[7];
+            if ((Searching_Nickname == null)) {
+                throw new global::System.ArgumentNullException("Searching_Nickname");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Nickname));
+            }
+            PodcastDBDataSet.AuthorDataTable dataTable = new PodcastDBDataSet.AuthorDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual PodcastDBDataSet.AuthorDataTable SearchByPatronymic(string Searching_Patronymic) {
+            this.Adapter.SelectCommand = this.CommandCollection[8];
+            if ((Searching_Patronymic == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Patronymic));
+            }
+            PodcastDBDataSet.AuthorDataTable dataTable = new PodcastDBDataSet.AuthorDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual PodcastDBDataSet.AuthorDataTable SearchBySurname(string Searching_Surname) {
+            this.Adapter.SelectCommand = this.CommandCollection[9];
             if ((Searching_Surname == null)) {
                 throw new global::System.ArgumentNullException("Searching_Surname");
             }
@@ -4177,7 +4316,7 @@ SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[5];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[7];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_I" +
@@ -4208,6 +4347,18 @@ SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_
                 "D\r\nFROM     Episode\r\nWHERE  (Podcast_ID LIKE @Searching_Podcast)";
             this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Podcast", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Podcast_ID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_I" +
+                "D\r\nFROM     Episode\r\nWHERE  (Episode_Description = @Searching_Description)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Description", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "Episode_Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[6].Connection = this.Connection;
+            this._commandCollection[6].CommandText = "SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_I" +
+                "D\r\nFROM     Episode\r\nWHERE  (Episode_Name = @Searching_Name)";
+            this._commandCollection[6].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Episode_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4287,6 +4438,40 @@ SELECT ID_Episode, Episode_Name, Episode_Description, Episode_Duration, Podcast_
         public virtual PodcastDBDataSet.EpisodeDataTable GetDataByPodcast(int Searching_Podcast) {
             this.Adapter.SelectCommand = this.CommandCollection[4];
             this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Searching_Podcast));
+            PodcastDBDataSet.EpisodeDataTable dataTable = new PodcastDBDataSet.EpisodeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual PodcastDBDataSet.EpisodeDataTable SearchByDescription(string Searching_Description) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
+            if ((Searching_Description == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Description));
+            }
+            PodcastDBDataSet.EpisodeDataTable dataTable = new PodcastDBDataSet.EpisodeDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual PodcastDBDataSet.EpisodeDataTable SearchByName(string Searching_Name) {
+            this.Adapter.SelectCommand = this.CommandCollection[6];
+            if ((Searching_Name == null)) {
+                throw new global::System.ArgumentNullException("Searching_Name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Name));
+            }
             PodcastDBDataSet.EpisodeDataTable dataTable = new PodcastDBDataSet.EpisodeDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
@@ -4627,7 +4812,7 @@ SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM Podcast WHE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[6];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM dbo.Podcast";
@@ -4650,6 +4835,18 @@ SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM Podcast WHE
                 "\r\nWHERE  (Podcast_Name LIKE \'%\'+@Searching_Name+\'%\')";
             this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Podcast_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[4] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[4].Connection = this.Connection;
+            this._commandCollection[4].CommandText = "SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID\r\nFROM     Podcast" +
+                "\r\nWHERE  (Podcast_Description = @Searching_Description)";
+            this._commandCollection[4].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[4].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Description", global::System.Data.SqlDbType.VarChar, 300, global::System.Data.ParameterDirection.Input, 0, 0, "Podcast_Description", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[5] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[5].Connection = this.Connection;
+            this._commandCollection[5].CommandText = "SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID\r\nFROM     Podcast" +
+                "\r\nWHERE  (Podcast_Name = @Searching_Name)";
+            this._commandCollection[5].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[5].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Searching_Name", global::System.Data.SqlDbType.VarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Podcast_Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4711,6 +4908,40 @@ SELECT ID_Podcast, Podcast_Name, Podcast_Description, Author_ID FROM Podcast WHE
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
         public virtual PodcastDBDataSet.PodcastDataTable GetDataByName(string Searching_Name) {
             this.Adapter.SelectCommand = this.CommandCollection[3];
+            if ((Searching_Name == null)) {
+                throw new global::System.ArgumentNullException("Searching_Name");
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Name));
+            }
+            PodcastDBDataSet.PodcastDataTable dataTable = new PodcastDBDataSet.PodcastDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual PodcastDBDataSet.PodcastDataTable SearchByDescription(string Searching_Description) {
+            this.Adapter.SelectCommand = this.CommandCollection[4];
+            if ((Searching_Description == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(Searching_Description));
+            }
+            PodcastDBDataSet.PodcastDataTable dataTable = new PodcastDBDataSet.PodcastDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, false)]
+        public virtual PodcastDBDataSet.PodcastDataTable SearchByName(string Searching_Name) {
+            this.Adapter.SelectCommand = this.CommandCollection[5];
             if ((Searching_Name == null)) {
                 throw new global::System.ArgumentNullException("Searching_Name");
             }

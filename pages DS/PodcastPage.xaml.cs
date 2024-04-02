@@ -31,6 +31,9 @@ namespace Practice4.pages_DS
             InitializeComponent();
             AuthorID_Selection.ItemsSource = dbViewModel.Authors.GetData().ToList();
             PodcastsDGr.ItemsSource = dbViewModel.Podcasts.GetData();
+
+            NameSelection.ItemsSource = dbViewModel.Podcasts.GetData().ToList();
+            DescriptionSelection.ItemsSource = dbViewModel.GetPodcastsDescriptionEntries().ToList();
         }
 
         private void ClearFilter_Click(object sender, RoutedEventArgs e)
@@ -49,7 +52,21 @@ namespace Practice4.pages_DS
                 PodcastsDGr.ItemsSource = dbViewModel.Podcasts.GetData();
         }
 
-        private void OnSortingString_Changed(object sender, TextChangedEventArgs e)
+        private void OnSelectedFilter_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            if (sender is ComboBox cb)
+            {
+                if (cb.SelectedItem != null)
+                {
+                    if (cb.Name.ToLower().Contains("name"))
+                        PodcastsDGr.ItemsSource = dbViewModel.Podcasts.SearchByName((cb.SelectedItem as PodcastDBDataSet.PodcastRow).Podcast_Name);
+                    else if (cb.Name.ToLower().Contains("description"))
+                        PodcastsDGr.ItemsSource = dbViewModel.Podcasts.SearchByDescription((cb.SelectedItem as PodcastDBDataSet.PodcastRow).Podcast_Description);
+                }
+            }
+        }
+
+        private void OnSorting_Changed(object sender, TextChangedEventArgs e)
         {
             if(sender is TextBox txt)
             {

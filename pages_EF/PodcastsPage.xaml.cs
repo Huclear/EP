@@ -28,6 +28,8 @@ namespace Practice4.pages
         {
             podcastsVM = new PodcastPageVM();
             InitializeComponent();
+            NameSelection.ItemsSource = podcastsVM.GetNameEntries();
+            DescriptionSelection.ItemsSource = podcastsVM.GetDescriptionEntries();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
@@ -39,6 +41,20 @@ namespace Practice4.pages
         private void AuthorID_Selection_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             podcastsVM.RefreshCollection();
+        }
+
+        private void OnSelectedFilter_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            if (sender is ComboBox cb)
+            {
+                if(cb.SelectedItem!= null)
+                {
+                   if(cb.Name.ToLower().Contains("name"))
+                        podcastsVM.FilterByName();
+                   else if(cb.Name.ToLower().Contains("description"))
+                        podcastsVM.FilterByDescription();
+                }
+            }
         }
     }
 }

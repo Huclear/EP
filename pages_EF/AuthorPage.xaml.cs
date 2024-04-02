@@ -27,11 +27,33 @@ namespace Practice4.pages
         {
             authorsVM = new AuthorPageVM();
             InitializeComponent();
+            NameSelection.ItemsSource = authorsVM.GetNameEntries();
+            SurnameSelection.ItemsSource = authorsVM.GetSurnameEntries();
+            PatronymicSelection.ItemsSource = authorsVM.GetPatronymicEntries();
+            NicknameSelection.ItemsSource = authorsVM.GetNicknameEntries();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NameSortEnable.IsChecked = SurnameSortEnable.IsChecked = PatronymicSortEnable.IsChecked = NicknameSortEnable.IsChecked = AgeSortEnable.IsChecked = false;
+        }
+
+        private void OnSelectedFilter_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            if (sender is ComboBox cb)
+            {
+                if (cb.SelectedItem != null)
+                {
+                    if (cb.Name.ToLower().Contains("nickname"))
+                        authorsVM.FilterByNickname();
+                    else if (cb.Name.ToLower().Contains("surname"))
+                        authorsVM.FilterBySurname();
+                    else if (cb.Name.ToLower().Contains("name"))
+                        authorsVM.FilterByName();
+                    else if (cb.Name.ToLower().Contains("patronymic"))
+                        authorsVM.FilterByPatronymic();
+                }
+            }
         }
     }
 }

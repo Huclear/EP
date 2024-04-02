@@ -1,4 +1,5 @@
-﻿using Practice4.ViewModels;
+﻿using Practice4.database;
+using Practice4.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -28,6 +29,10 @@ namespace Practice4.pages_DS
             dbViewModel = _dbViewModel;
             InitializeComponent();
             AuthorsDGr.ItemsSource = dbViewModel.Authors.GetData();
+            NameSelection.ItemsSource = dbViewModel.Authors.GetData().ToList();
+            PatronymicSelection.ItemsSource = dbViewModel.getAuthorsPatronymicsEntries().ToList();
+            NicknameSelection.ItemsSource = dbViewModel.Authors.GetData().ToList();
+            SurnameSelection.ItemsSource = dbViewModel.Authors.GetData().ToList();
         }
 
         private void OnClearFilter_Click(object sender, RoutedEventArgs e)
@@ -54,6 +59,24 @@ namespace Practice4.pages_DS
                     else if (txt.Name.ToLower().Contains("age"))
                         if (int.TryParse(txt.Text, out age))
                             AuthorsDGr.ItemsSource = dbViewModel.Authors.GetDataByAge(age);
+                }
+            }
+        }
+
+        private void OnSelectedFilter_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            if (sender is ComboBox cb)
+            {
+                if (cb.SelectedItem != null)
+                {
+                    if (cb.Name.ToLower().Contains("nickname"))
+                         AuthorsDGr.ItemsSource =  dbViewModel.Authors.SearchByNickname((cb.SelectedItem as PodcastDBDataSet.AuthorRow).Author_Nickname);
+                    else if (cb.Name.ToLower().Contains("surname"))
+                        AuthorsDGr.ItemsSource = dbViewModel.Authors.SearchBySurname((cb.SelectedItem as PodcastDBDataSet.AuthorRow).Author_SurName);
+                    else if (cb.Name.ToLower().Contains("name"))
+                        AuthorsDGr.ItemsSource = dbViewModel.Authors.SearchByName((cb.SelectedItem as PodcastDBDataSet.AuthorRow).Author_Name);
+                    else if (cb.Name.ToLower().Contains("patronymic"))
+                        AuthorsDGr.ItemsSource = dbViewModel.Authors.SearchByPatronymic((cb.SelectedItem as PodcastDBDataSet.AuthorRow).Author_Patronymic);
                 }
             }
         }

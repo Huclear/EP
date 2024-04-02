@@ -33,5 +33,48 @@ namespace Practice4.ViewModels
             Podcasts = new PodcastTableAdapter();
             Episodes = new EpisodeTableAdapter();
         }
+
+        public ICollection<PodcastDBDataSet.AuthorRow> getAuthorsPatronymicsEntries()
+        {
+            List<PodcastDBDataSet.AuthorRow> authors = new List<PodcastDBDataSet.AuthorRow>();
+            foreach (var author in Authors.GetData().ToList())
+            {
+                if(!author.IsAuthor_PatronymicNull())
+                    authors.Add(author);
+            }
+            return authors;
+        }
+
+        public ICollection<PodcastDBDataSet.PodcastRow> GetPodcastsDescriptionEntries()
+        {
+            List<PodcastDBDataSet.PodcastRow> podcasts = new List<PodcastDBDataSet.PodcastRow>();
+            foreach (var podcast in Podcasts.GetData().ToList())
+            {
+                if (!podcast.IsPodcast_DescriptionNull())
+                    podcasts.Add(podcast);
+            }
+            return podcasts;
+        }
+
+        public ICollection<PodcastDBDataSet.AlbumRow> GetAlbumsDescriptionEntries()
+        {
+            List<PodcastDBDataSet.AlbumRow> albums = new List<PodcastDBDataSet.AlbumRow>();
+            foreach (var album in Albums.GetData().ToList())
+            {
+                if (!album.IsAlbum_DescriptionNull())
+                    albums.Add(album);
+            }
+            return albums;
+        }
+        public ICollection<PodcastDBDataSet.EpisodeRow> GetEpisodesDescriptionEntries()
+        {
+            List<PodcastDBDataSet.EpisodeRow> episodes = new List<PodcastDBDataSet.EpisodeRow>();
+            foreach (var episode in Episodes.GetData().ToList())
+            {
+                if (!episode.IsEpisode_DescriptionNull())
+                    episodes.Add(episode);
+            }
+            return episodes;
+        }
     }
 }

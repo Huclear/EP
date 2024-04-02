@@ -26,6 +26,9 @@ namespace Practice4.ViewModels.EF
         public RelayCommand<bool> changeEnableAuthorSortCommand => _changeEnableAuthorSortCommand ?? (new RelayCommand<bool>(ChangeEnableSortAuthor));
 
 
+        public string CurrentNameFilter { get; set; } = string.Empty;
+        public string CurrentDescriptionFilter { get; set; } = string.Empty;
+
         public string CurrentNameSorting { get; set; } = string.Empty;
         public string CurrentDescriptionSorting { get; set; } = string.Empty;
         public Author CurrentAuthorSorting { get; set; } = null;
@@ -44,6 +47,44 @@ namespace Practice4.ViewModels.EF
         public void RefreshCollection()
         {
             CollectionViewSource.GetDefaultView(Podcasts).Refresh();
+        }
+
+        public ICollection<string> GetNameEntries()
+        {
+            List<string> names = new List<string>();
+            foreach (var item in Podcasts)
+                names.Add(item.Podcast_Name);
+            return names;
+        }
+        public ICollection<string> GetDescriptionEntries()
+        {
+            List<string> names = new List<string>();
+            foreach (var item in Podcasts)
+                names.Add(item.Podcast_Description);
+            return names;
+        }
+
+
+        private bool FilterByName(object podcast)
+        {
+            if(podcast == null || !(podcast is Podcast))return false;
+            return ((Podcast)podcast).Podcast_Name.Equals(CurrentNameFilter);
+        }
+        public void FilterByName()
+        {
+            var collection = CollectionViewSource.GetDefaultView(Podcasts);
+            collection.Filter = FilterByName;
+        }
+
+        private bool FilterByDescription(object podcast)
+        {
+            if(podcast == null || !(podcast is Podcast) || ((Podcast)podcast).Podcast_Description == null)return false;
+            return ((Podcast)podcast).Podcast_Description.Equals(CurrentDescriptionFilter);
+        }
+        public void FilterByDescription()
+        {
+            var collection = CollectionViewSource.GetDefaultView(Podcasts);
+            collection.Filter = FilterByDescription;
         }
 
         public void ClearFilters(ObservableCollection<Podcast> podcasts)

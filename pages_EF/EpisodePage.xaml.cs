@@ -27,11 +27,27 @@ namespace Practice4.pages
         {
             episodesVM = new EpisodePageVM();
             InitializeComponent();
+            NameSelection.ItemsSource = episodesVM.GetNameEntries();
+            DescriptionSelection.ItemsSource = episodesVM.GetDescriptionEntries();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             NameSortEnable.IsChecked = DescriptionSortEnable.IsChecked = PodcastSortEnable.IsChecked = DurationSortEnable.IsChecked = false;
+        }
+
+        private void OnSelectedFilter_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            if (sender is ComboBox cb)
+            {
+                if (cb.SelectedItem != null)
+                {
+                    if (cb.Name.ToLower().Contains("name"))
+                        episodesVM.FilterByName();
+                    else if (cb.Name.ToLower().Contains("description"))
+                        episodesVM.FilterByDescription();
+                }
+            }
         }
     }
 }

@@ -13,6 +13,13 @@ namespace Practice4.ViewModels.EF
 {
     public class AuthorPageVM
     {
+
+
+        public string CurrentNameFilter { get; set; } = string.Empty;
+        public string CurrentSurnameFilter { get; set; } = string.Empty;
+        public string CurrentPatronymicFilter { get; set; } = string.Empty;
+        public string CurrentNicknameFilter { get; set; } = string.Empty;
+
         public string CurrentNameSorting { get; set; } = string.Empty;
         public string CurrentSurnameSorting { get; set; } = string.Empty;
         public string CurrentPatronymicSorting { get; set; } = string.Empty;
@@ -48,6 +55,81 @@ namespace Practice4.ViewModels.EF
             dbContext = new PodcastDBContext();
             Authors = new ObservableCollection<Author>(dbContext.Author.ToList());
         }
+
+        public ICollection<string> GetNameEntries()
+        {
+            List<string> names = new List<string>();
+            foreach (var item in Authors)
+                names.Add(item.Author_Name);
+            return names;
+        }
+        public ICollection<string> GetSurnameEntries()
+        {
+            List<string> names = new List<string>();
+            foreach (var item in Authors)
+                names.Add(item.Author_SurName);
+            return names;
+        }
+        public ICollection<string> GetNicknameEntries()
+        {
+            List<string> names = new List<string>();
+            foreach (var item in Authors)
+                names.Add(item.Author_Nickname);
+            return names;
+        }
+        public ICollection<string> GetPatronymicEntries()
+        {
+            List<string> names = new List<string>();
+            foreach (var item in Authors)
+                names.Add(item.Author_Patronymic);
+            return names;
+        }
+
+
+        private bool FilterByName(object author)
+        {
+            if (author == null || !(author is Author)) return false;
+            return ((Author)author).Author_Name.Equals(CurrentNameFilter);
+        }
+        public void FilterByName()
+        {
+            var collection = CollectionViewSource.GetDefaultView(Authors);
+            collection.Filter = FilterByName;
+        }
+
+        private bool FilterBySurname(object podcast)
+        {
+            if (podcast == null || !(podcast is Author)) return false;
+            return ((Author)podcast).Author_SurName.Equals(CurrentSurnameFilter);
+        }
+        public void FilterBySurname()
+        {
+            var collection = CollectionViewSource.GetDefaultView(Authors);
+            collection.Filter = FilterBySurname;
+        }
+
+        private bool FilterByPatronymic(object author)
+        {
+            if (author == null || !(author is Author) || ((Author)author).Author_Patronymic == null) return false;
+            return ((Author)author).Author_Patronymic.Equals(CurrentPatronymicFilter);
+        }
+        public void FilterByPatronymic()
+        {
+            var collection = CollectionViewSource.GetDefaultView(Authors);
+            collection.Filter = FilterByPatronymic;
+        }
+
+        private bool FilterByNickname(object author)
+        {
+            if (author == null || !(author is Author)) return false;
+            return ((Author)author).Author_Nickname.Equals(CurrentNicknameFilter);
+        }
+        public void FilterByNickname()
+        {
+            var collection = CollectionViewSource.GetDefaultView(Authors);
+            collection.Filter = FilterByNickname;
+        }
+
 
         public void ClearFilters(ObservableCollection<Author> authors)
         {

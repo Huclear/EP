@@ -25,6 +25,9 @@ namespace Practice4.ViewModels.EF
         private RelayCommand<bool> _changeEnableAuthorSortCommand = null;
         public RelayCommand<bool> changeEnableAuthorSortCommand => _changeEnableAuthorSortCommand ?? (new RelayCommand<bool>(ChangeEnableSortAuthor));
 
+        public string CurrentNameFilter { get; set; } = string.Empty;
+        public string CurrentDescriptionFilter { get; set; } = string.Empty;
+
         public string CurrentNameSorting { get; set; } = string.Empty;
         public string CurrentDescriptionSorting { get; set; } = string.Empty;
         public Author CurrentAuthorSorting { get; set; } = null;
@@ -39,6 +42,45 @@ namespace Practice4.ViewModels.EF
             Authors = new ObservableCollection<Author>(dbContext.Author.ToList());
             Albums = new ObservableCollection<Album>(dbContext.Album.ToList());
         }
+
+        public ICollection<string> GetNameEntries()
+        {
+            List<string> names = new List<string>();
+            foreach (var item in Albums)
+                names.Add(item.Album_Name);
+            return names;
+        }
+        public ICollection<string> GetDescriptionEntries()
+        {
+            List<string> names = new List<string>();
+            foreach (var item in Albums)
+                names.Add(item.Album_Description);
+            return names;
+        }
+
+
+        private bool FilterByName(object podcast)
+        {
+            if (podcast == null || !(podcast is Album)) return false;
+            return ((Album)podcast).Album_Name.Equals(CurrentNameFilter);
+        }
+        public void FilterByName()
+        {
+            var collection = CollectionViewSource.GetDefaultView(Albums);
+            collection.Filter = FilterByName;
+        }
+
+        private bool FilterByDescription(object podcast)
+        {
+            if (podcast == null || !(podcast is Album) || ((Album)podcast).Album_Description == null) return false;
+            return ((Album)podcast).Album_Description.Equals(CurrentDescriptionFilter);
+        }
+        public void FilterByDescription()
+        {
+            var collection = CollectionViewSource.GetDefaultView(Albums);
+            collection.Filter = FilterByDescription;
+        }
+
         public void ClearFilters(ObservableCollection<Album> albums)
         {
             if (albums != null)

@@ -30,6 +30,9 @@ namespace Practice4.pages_DS
             InitializeComponent();
             PodcastIDSelector.ItemsSource = dbViewModel.Podcasts.GetData().ToList();
             EpisodesDGr.ItemsSource = dbViewModel.Episodes.GetData();
+
+            NameSelection.ItemsSource = dbViewModel.Episodes.GetData().ToList();
+            DescriptionSelection.ItemsSource = dbViewModel.GetEpisodesDescriptionEntries().ToList();
         }
 
         private void OnClearFilter_Click(object sender, RoutedEventArgs e)
@@ -61,6 +64,20 @@ namespace Practice4.pages_DS
                     else if(txt.Name.ToLower().Contains("duration"))
                         if(decimal.TryParse(txt.Text, out dur))
                             EpisodesDGr.ItemsSource = dbViewModel.Episodes.GetDataByDuration(dur);
+                }
+            }
+        }
+
+        private void OnSelectedFilter_Changed(object sender, SelectionChangedEventArgs e)
+        {
+            if (sender is ComboBox cb)
+            {
+                if (cb.SelectedItem != null)
+                {
+                    if (cb.Name.ToLower().Contains("name"))
+                        EpisodesDGr.ItemsSource = dbViewModel.Episodes.SearchByName((cb.SelectedItem as PodcastDBDataSet.EpisodeRow).Episode_Name);
+                    else if (cb.Name.ToLower().Contains("description"))
+                        EpisodesDGr.ItemsSource = dbViewModel.Episodes.SearchByDescription((cb.SelectedItem as PodcastDBDataSet.EpisodeRow).Episode_Description);
                 }
             }
         }

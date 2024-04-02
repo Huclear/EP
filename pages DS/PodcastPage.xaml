@@ -32,11 +32,25 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.ColumnSpan="2" Padding="8" Text="Podcast info" HorizontalAlignment="Center" FontSize="20" FontFamily="Sans" FontWeight="Bold"/>
             <TextBlock Grid.Row="1" Text="Name:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center"/>
-            <TextBox Name="NameInput" TextChanged="OnSortingString_Changed" Grid.Column="1" Grid.Row="1" Margin="8" FontSize="16" FontFamily="Sans"/>
-            
+            <Grid Grid.Column="1" Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBox TextChanged="OnSorting_Changed" Name="NameInput" Margin="8" FontSize="16" FontFamily="Sans"/>
+                <ComboBox Name="NameSelection" SelectionChanged="OnSelectedFilter_Changed" Grid.Row="1" DisplayMemberPath="Podcast_Name"/>
+            </Grid>
+
             <TextBlock Grid.Row="2" Text="Description:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
-            <TextBox Name="DescriptionInput" TextChanged="OnSortingString_Changed" Grid.Column="1" Grid.Row="2" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
-            
+            <Grid Grid.Column="1" Grid.Row="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+                <TextBox TextChanged="OnSorting_Changed" Name="DescriptionInput" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+                <ComboBox Name="DescriptionSelection" SelectionChanged="OnSelectedFilter_Changed" Grid.Row="1" DisplayMemberPath="Podcast_Description"/>
+            </Grid>
+
             <TextBlock Grid.Row="3" Text="Author ID:" FontSize="16" FontFamily="Sans" Padding="8"  TextAlignment="Center"/>
             <ComboBox ItemTemplate="{StaticResource ResourceKey=AuthorComboBoxDataTemplate}" SelectionChanged="OnSelectedAuthor_Changed" Name="AuthorID_Selection" Grid.Column="1" Grid.Row="3" Margin="8"/>
             

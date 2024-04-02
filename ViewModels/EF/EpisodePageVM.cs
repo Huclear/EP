@@ -9,6 +9,7 @@ using System.Windows.Data;
 using System.Windows;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Practice4.Commands;
+using System.Globalization;
 
 namespace Practice4.ViewModels.EF
 {
@@ -30,6 +31,8 @@ namespace Practice4.ViewModels.EF
         private RelayCommand<bool> _changeEnablePodcastSortCommand = null;
         public RelayCommand<bool> changeEnablePodcastSortCommand => _changeEnablePodcastSortCommand ?? (new RelayCommand<bool>(ChangeEnableSortPodcast));
 
+        public string CurrentNameFilter { get; set; } = string.Empty;
+        public string CurrentDescriptionFilter { get; set; } = string.Empty;
         public string CurrentNameSorting { get; set; } = string.Empty;
         public string CurrentDescriptionSorting { get; set; } = string.Empty;
         public decimal CurrentDurationSorting { get; set; } = 0;
@@ -44,6 +47,43 @@ namespace Practice4.ViewModels.EF
             dbContext = new PodcastDBContext();
             Episodes = new ObservableCollection<Episode>(dbContext.Episode.ToList());
             Podcasts = new ObservableCollection<Podcast>(dbContext.Podcast.ToList());
+        }
+
+        public ICollection<string> GetNameEntries()
+        {
+            List<string> entries = new List<string>();
+            foreach (var item in Episodes)
+                entries.Add(item.Episode_Name);
+            return entries;
+        }
+        public ICollection<string> GetDescriptionEntries()
+        {
+            List<string> entries = new List<string>();
+            foreach (var item in Episodes)
+                entries.Add(item.Episode_Description);
+            return entries;
+        }
+
+        private bool FilterByDescription(object podcast)
+        {
+            if (podcast == null || !(podcast is Episode) || ((Episode)podcast).Episode_Description == null) return false;
+            return ((Episode)podcast).Episode_Description.Equals(CurrentDescriptionFilter);
+        }
+        public void FilterByDescription()
+        {
+            var collection = CollectionViewSource.GetDefaultView(Podcasts);
+            collection.Filter = FilterByDescription;
+        }
+
+        private bool FilterByName(object podcast)
+        {
+            if (podcast == null || !(podcast is Podcast)) return false;
+            return ((Episode)podcast).Episode_Name.Equals(CurrentNameFilter);
+        }
+        public void FilterByName()
+        {
+            var collection = CollectionViewSource.GetDefaultView(Podcasts);
+            collection.Filter = FilterByName;
         }
 
         public void ClearFilter(ICollection<Episode> episodes)
