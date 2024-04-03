@@ -56,5 +56,10 @@ namespace Practice4.pages
                 }
             }
         }
+
+        private void OnSortingString_Changed(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(PodcastsDGr.ItemsSource).Refresh();
+        }
     }
 }

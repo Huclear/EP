@@ -34,35 +34,35 @@
             </Grid.ColumnDefinitions>
             <TextBlock Grid.ColumnSpan="3" Padding="8" Text="Episode info" HorizontalAlignment="Center" FontSize="20" FontFamily="Sans" FontWeight="Bold"/>
 
-            <CheckBox Name="NameSortEnable" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableNameSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
+            <CheckBox Name="NameSortEnable"  Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableNameSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
             <TextBlock Grid.Column="1" Grid.Row="1" Text="Name:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center"/>
             <Grid Grid.Column="2" Grid.Row="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBox Text="{Binding Path=CurrentNameSorting}" Margin="8" FontSize="16" FontFamily="Sans"/>
+                <TextBox TextChanged="OnSortingString_Changed" Text="{Binding Path=CurrentNameSorting}" Margin="8,8,8,8" FontSize="16" FontFamily="Sans"/>
                 <ComboBox Name="NameSelection" SelectionChanged="OnSelectedFilter_Changed" SelectedItem="{Binding CurrentNameFilter}" Grid.Row="1"/>
             </Grid>
 
-            <CheckBox Name="DescriptionSortEnable" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableDescriptionSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
+            <CheckBox Name="DescriptionSortEnable" Grid.Row="2" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableDescriptionSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
             <TextBlock Grid.Column="1" Grid.Row="2" Text="Description:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
             <Grid Grid.Column="2" Grid.Row="2">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="2*"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                    <TextBox Text="{Binding Path=CurrentDescriptionSorting}" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+                <TextBox TextChanged="OnSortingString_Changed" Text="{Binding Path=CurrentDescriptionSorting}" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
                 <ComboBox Name="DescriptionSelection" SelectionChanged="OnSelectedFilter_Changed" SelectedItem="{Binding CurrentDescriptionFilter}" Grid.Row="1"/>
             </Grid>
 
-            <CheckBox Name="PodcastSortEnable" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnablePodcastSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
+            <CheckBox  Grid.Row="4" Name="PodcastSortEnable" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnablePodcastSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
             <TextBlock Grid.Column="1" Grid.Row="4" Text="Podcast ID:" FontSize="16" FontFamily="Sans" Padding="8" TextAlignment="Center" />
             <ComboBox Name="PodcastIDSelector" SelectedItem="{Binding CurrentPodcastSorting}" Margin="8" Grid.Column="2" Grid.Row="4" ItemsSource="{Binding RelativeSource={RelativeSource AncestorType={x:Type Page}}, Path=DataContext.Podcasts}"/>
 
-            <CheckBox Name="DurationSortEnable" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableDurationSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
+            <CheckBox  Grid.Row="3" Name="DurationSortEnable" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="12" Command="{Binding changeEnableDurationSortCommand}" CommandParameter="{Binding RelativeSource={RelativeSource Self}, Path=IsChecked}" />
             <TextBlock Grid.Column="1"  Text="Duration:" Grid.Row="3" FontSize="16" FontFamily="Sans" Padding="8"  TextAlignment="Center"/>
-            <TextBox Grid.Column="2" Grid.Row="3" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150">
+            <TextBox TextChanged="OnSortingString_Changed" Grid.Column="2" Grid.Row="3" Margin="8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150">
                 <TextBox.Text>
                     <Binding Path="CurrentDurationSorting" UpdateSourceTrigger="PropertyChanged" NotifyOnValidationError="True">
                         <Binding.ValidationRules>

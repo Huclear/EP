@@ -43,7 +43,7 @@
                     <RowDefinition Height="2*"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBox Text="{Binding Path=CurrentNameSorting, UpdateSourceTrigger=PropertyChanged}" Margin="8" FontSize="16" FontFamily="Sans"/>
+                <TextBox TextChanged="OnSortingString_Changed" Text="{Binding Path=CurrentNameSorting, UpdateSourceTrigger=PropertyChanged}" Margin="8" FontSize="16" FontFamily="Sans"/>
                 <ComboBox Name="NameSelection" SelectionChanged="OnSelectedFilter_Changed" SelectedItem="{Binding CurrentNameFilter}" Grid.Row="1" />
             </Grid>
 
@@ -60,7 +60,7 @@
                     <RowDefinition Height="2*"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <TextBox Text="{Binding Path=CurrentDescriptionSorting, UpdateSourceTrigger=PropertyChanged}" Margin="8,8,8,8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
+                <TextBox TextChanged="OnSortingString_Changed" Text="{Binding Path=CurrentDescriptionSorting, UpdateSourceTrigger=PropertyChanged}" Margin="8,8,8,8" FontSize="16" FontFamily="Sans" TextWrapping="Wrap" MaxHeight="150"/>
                 <ComboBox Name="DescriptionSelection" SelectionChanged="OnSelectedFilter_Changed" SelectedItem="{Binding CurrentDescriptionFilter}" Grid.Row="1"/>
             </Grid>
 

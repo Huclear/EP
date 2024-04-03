@@ -16,7 +16,7 @@ namespace Practice4.database
     public partial class PodcastDBContext : DbContext
     {
         public PodcastDBContext()
-            : base("name=PodcastDBContext")
+            : base("name=PodcastsDBContext")
         {
         }
     

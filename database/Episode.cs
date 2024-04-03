@@ -21,7 +21,6 @@ namespace Practice4.database
         public int Podcast_ID { get; set; }
     
         public virtual Podcast Podcast { get; set; }
-
         public override string ToString()
         {
             return $"{Episode_Name} - {Episode_Duration}";

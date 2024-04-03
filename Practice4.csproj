@@ -77,34 +77,34 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="database\Album.cs">
-      <DependentUpon>PodacstDBModel.tt</DependentUpon>
+      <DependentUpon>PodcastDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="database\AlbumsPodcasts.cs">
-      <DependentUpon>PodacstDBModel.tt</DependentUpon>
+      <DependentUpon>PodcastDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="database\Author.cs">
-      <DependentUpon>PodacstDBModel.tt</DependentUpon>
+      <DependentUpon>PodcastDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="database\Episode.cs">
-      <DependentUpon>PodacstDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="database\PodacstDBModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PodacstDBModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="database\PodacstDBModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PodacstDBModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="database\PodacstDBModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PodacstDBModel.edmx</DependentUpon>
+      <DependentUpon>PodcastDBModel.tt</DependentUpon>
     </Compile>
     <Compile Include="database\Podcast.cs">
-      <DependentUpon>PodacstDBModel.tt</DependentUpon>
+      <DependentUpon>PodcastDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\PodcastDBModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PodcastDBModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\PodcastDBModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PodcastDBModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="database\PodcastDBModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PodcastDBModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="MainWindow%28DS%29.xaml.cs">
       <DependentUpon>MainWindow%28DS%29.xaml</DependentUpon>
@@ -235,12 +235,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="database\PodacstDBModel.edmx">
+    <EntityDeploy Include="database\PodcastDBModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PodacstDBModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>PodcastDBModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="database\PodacstDBModel.edmx.diagram">
-      <DependentUpon>PodacstDBModel.edmx</DependentUpon>
+    <None Include="database\PodcastDBModel.edmx.diagram">
+      <DependentUpon>PodcastDBModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="database\PodcastsPlaylistsDataSet.xsc">
@@ -276,18 +276,17 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="database\PodacstDBModel.Context.tt">
+    <Content Include="database\PodcastDBModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PodacstDBModel.edmx</DependentUpon>
-      <LastGenOutput>PodacstDBModel.Context.cs</LastGenOutput>
+      <DependentUpon>PodcastDBModel.edmx</DependentUpon>
+      <LastGenOutput>PodcastDBModel.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="database\PodacstDBModel.tt">
+    <Content Include="database\PodcastDBModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PodacstDBModel.edmx</DependentUpon>
-      <LastGenOutput>PodacstDBModel.cs</LastGenOutput>
+      <DependentUpon>PodcastDBModel.edmx</DependentUpon>
+      <LastGenOutput>PodcastDBModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

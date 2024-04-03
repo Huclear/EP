@@ -71,18 +71,19 @@ namespace Practice4.ViewModels.EF
         }
         public void FilterByDescription()
         {
-            var collection = CollectionViewSource.GetDefaultView(Podcasts);
+            var collection = CollectionViewSource.GetDefaultView(Episodes);
             collection.Filter = FilterByDescription;
+            collection.Refresh();
         }
 
         private bool FilterByName(object podcast)
         {
-            if (podcast == null || !(podcast is Podcast)) return false;
+            if (podcast == null || !(podcast is Episode)) return false;
             return ((Episode)podcast).Episode_Name.Equals(CurrentNameFilter);
         }
         public void FilterByName()
         {
-            var collection = CollectionViewSource.GetDefaultView(Podcasts);
+            var collection = CollectionViewSource.GetDefaultView(Episodes);
             collection.Filter = FilterByName;
         }
 
@@ -95,7 +96,7 @@ namespace Practice4.ViewModels.EF
 
         private bool SortByName(object episode)
         {
-            if (episode == null || !(episode is Podcast)) return false;
+            if (episode == null || !(episode is Episode)) return false;
             return ((Episode)episode).Episode_Name.ToLower().Contains(CurrentNameSorting.ToLower());
         }
 

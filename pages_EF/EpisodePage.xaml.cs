@@ -27,6 +27,7 @@ namespace Practice4.pages
         {
             episodesVM = new EpisodePageVM();
             InitializeComponent();
+
             NameSelection.ItemsSource = episodesVM.GetNameEntries();
             DescriptionSelection.ItemsSource = episodesVM.GetDescriptionEntries();
         }
@@ -48,6 +49,11 @@ namespace Practice4.pages
                         episodesVM.FilterByDescription();
                 }
             }
+        }
+
+        private void OnSortingString_Changed(object sender, TextChangedEventArgs e)
+        {
+            CollectionViewSource.GetDefaultView(EpisodesDGr.ItemsSource).Refresh();
         }
     }
 }
